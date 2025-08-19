@@ -775,7 +775,7 @@ section {
 }
 
 .stats-counter .stats-item .purecounter {
-  min-width: 90px;
+  min-width: 180px;
   padding-right: 15px;
 }
 
@@ -791,6 +791,7 @@ section {
   font-weight: 700;
   color: var(--color-primary);
   line-height: 40px;
+  text-align: right;
 }
 
 .stats-counter .stats-item p {
