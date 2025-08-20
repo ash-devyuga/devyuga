@@ -303,7 +303,7 @@ section {
   margin-right: 6px;
 }
 
-.header .logo h1 {
+.header .logo h2 {
   font-size: 30px;
   margin: 0;
   font-weight: 600;
@@ -312,7 +312,7 @@ section {
   font-family: var(--font-primary);
 }
 
-.header .logo h1 span {
+.header .logo h2 span {
   color: #f96f59;
 }
 
@@ -1950,7 +1950,7 @@ section {
   }
 }
 
-.hero h2 {
+.hero h1 {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -2003,7 +2003,7 @@ section {
 }
 
 @media (max-width: 640px) {
-  .hero h2 {
+  .hero h1 {
     font-size: 36px;
   }
 
