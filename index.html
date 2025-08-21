@@ -795,105 +795,7 @@
           </p>
         </div>
 
-        <div class="row gy-4">
-
-          <!-- Blog 1 -->
-          <div class="col-xl-4 col-md-6">
-            <article>
-              <div class="post-img">
-                <img src="assets/img/blog/openIdAndOpenAuth.webp" alt="OpenID and OAuth" class="img-fluid"
-                  alt="blog image">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/openid-and-oauth-ff4d9347dd5f">
-                  OpenID and OAuth
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                OpenID is an authentication protocol, OAuth is an authorization protocol, and OpenID Connect combines
-                both
-                by adding an identity layer on top of OAuth 2.0 for authentication and obtaining user profile
-                information
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-07">07-March-2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <!-- Blog 2 -->
-          <div class="col-xl-4 col-md-6">
-            <article>
-              <div class="post-img">
-                <img src="assets/img/blog/tokenBasedAuth.webp" alt="Token Based Authentication" class="img-fluid"
-                  alt="blog image">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/token-based-authentication-in-web-applications-794d97056910">
-                  Token Based Authentication
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Token-based authentication in web applications uses temporary access tokens instead of passwords to
-                verify
-                user identity and authorize access to resources, providing improved security and a better user
-                experience.
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-05">05-March-2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
-          <!-- Blog 3 -->
-          <div class="col-xl-4 col-md-12">
-            <article>
-              <div class="post-img">
-                <img src="assets/img/blog/sessionBasedCookie.webp" alt="Session Based Authentication" class="img-fluid"
-                  alt="blog image">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/session-based-authentication-cookie-06a5f84c4c6b">
-                  Session Based Authentication
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Session-based authentication uses a server-generated session ID stored in a cookie to track user login
-                status and authorize access to protected resources across multiple requests.
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-02">02-March-2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div><!-- End post item -->
-
+        <div id="medium-posts" class="row gy-4">
         </div><!-- End row -->
 
       </div>
@@ -1177,6 +1079,104 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  
+  <script>
+    const mediumContent = [
+      {
+        url: "https://medium.com/@ishubansal1400/react-is-declarative-how-to-think-in-react-194869b1493e",
+        category: "Technology - Frontend",
+        time: "2024-08-20",
+      },
+      {
+        url: "https://medium.com/@ishubansal1400/stop-misusing-react-and-redux-a-call-for-thoughtful-frontend-development-d12fe7744ff1",
+        category: "Technology - Frontend",
+        time: "2024-07-14",
+      },
+      {
+        url: "https://medium.com/@KumarHalder/openid-and-oauth-ff4d9347dd5f",
+        category: "Technology - Authentication",
+        time: "2024-03-07",
+      },
+      {
+        url: "https://medium.com/@KumarHalder/token-based-authentication-in-web-applications-794d97056910",
+        category: "Technology - Authentication",
+        time: "2024-03-05",
+      },
+      {
+        url: "https://medium.com/@KumarHalder/session-based-authentication-cookie-06a5f84c4c6b",
+        category: "Technology - Authentication",
+        time: "2024-03-02",
+      }
+    ];
+
+    async function fetchMetadata(url) {
+      try {
+        const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data.contents, "text/html");
+
+        const title = doc.querySelector('meta[property="og:title"]')?.content || 'No title';
+        const desc = doc.querySelector('meta[property="og:description"]')?.content || '';
+        const image = doc.querySelector('meta[property="og:image"]')?.content || '';
+
+        return { title, desc, image, url, category: 'Technology - Authentication', time: new Date().toISOString() };
+      } catch (e) {
+        console.error(e);
+        return null;
+      }
+    }
+
+    async function renderPosts() {
+      const container = document.getElementById('medium-posts');
+      for (let content of mediumContent) {
+        const fetchedMeta = await fetchMetadata(content.url);
+        if (!fetchedMeta) continue;
+        const meta = {
+          title: fetchedMeta.title || content.title,
+          desc: fetchedMeta.desc || content.desc,
+          image: fetchedMeta.image || content.image,
+          url: fetchedMeta.url || content.url,
+          category: content.category,
+          time: content.time,
+        };
+
+        const postCard = document.createElement('div');
+        postCard.className = 'col-xl-4 col-md-6';
+        postCard.innerHTML = `
+          <article>
+            <div class="post-img">
+              <img src="${meta.image}" alt="${meta.title}"
+                alt="blog image">
+            </div>
+
+            <p class="post-category">${meta.category}</p>
+
+            <h2 class="title">
+              <a href="${meta.url}">
+                ${meta.title}
+              </a>
+            </h2>
+
+            <p class="post-overview">
+              ${meta.desc}
+            </p>
+
+            <div class="d-flex align-items-center">
+              <div class="post-meta">
+                <p class="post-date">
+                  <time datetime="${meta.time}"></time>
+                </p>
+              </div>
+            </div>
+          </article>
+        `;
+        container.appendChild(postCard);
+      }
+    }
+
+    renderPosts();
+  </script>
 </body>
 
 
