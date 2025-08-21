@@ -72,6 +72,7 @@ section {
   position: relative;
 }
 
+
 .section-header h2:after {
   content: "";
   position: absolute;
@@ -1395,21 +1396,27 @@ section {
 /* Team Section */
 .team {
   padding: 80px 0;
-  background: #2c4964;
+  background: url("../img/Graphic-Hero-Blur.jpg");
+}
+
+.team h2{
+   font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #fff;
 }
 
 .team .member {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
   padding: 25px;
   height: 100%;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .team .member:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .team .member-info {
@@ -1418,8 +1425,8 @@ section {
 }
 
 .team .member-img {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   min-width: 80px;
   border-radius: 50%;
   overflow: hidden;
