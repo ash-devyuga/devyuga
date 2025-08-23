@@ -964,32 +964,32 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contact-form" class="php-email-form" novalidate>
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+                <textarea name="message" class="form-control" rows="7" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="loading" style="display:none;">Loading...</div>
+                <!-- <div class="error-message" style="display:none; color:red;"></div> -->
+                <div class="sent-message" style="display:none; color:white;">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+              </div>
             </form>
-          </div><!-- End Contact Form -->
-
+          </div>
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 
@@ -1082,12 +1082,12 @@
       {
         url: "https://medium.com/@ishubansal1400/react-is-declarative-how-to-think-in-react-194869b1493e",
         category: "Technology - Frontend",
-        time: "2024-08-20",
+        time: "2025-08-20",
       },
       {
         url: "https://medium.com/@ishubansal1400/stop-misusing-react-and-redux-a-call-for-thoughtful-frontend-development-d12fe7744ff1",
         category: "Technology - Frontend",
-        time: "2024-07-14",
+        time: "2025-07-14",
       },
       {
         url: "https://medium.com/@KumarHalder/openid-and-oauth-ff4d9347dd5f",
@@ -1174,6 +1174,52 @@
 
     renderPosts();
   </script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize EmailJS
+  emailjs.init("sfdbCxS2BHHEmelZO");
+
+  const form = document.getElementById("contact-form");
+  const loading = form.querySelector(".loading");
+  // const errorMessage = form.querySelector(".error-message");
+  const sentMessage = form.querySelector(".sent-message");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    loading.style.display = "block";
+    // errorMessage.style.display = "none";
+    sentMessage.style.display = "none";
+
+    // Map input values to EmailJS template variables
+    const formData = {
+      from_name: form.querySelector("input[name='from_name']").value,
+      reply_to: form.querySelector("input[name='email']").value,
+      subject: form.querySelector("input[name='subject']").value,
+      message: form.querySelector("textarea[name='message']").value,
+    };
+
+    // Send email
+    emailjs.send("service_6hqsf6n", "template_kvhtw7q", formData)
+      .then(() => {
+        loading.style.display = "none";
+        sentMessage.style.display = "block";
+        form.reset();
+      })
+      .catch((error) => {
+        loading.style.display = "none";
+        // errorMessage.textContent = "Failed to send message. Please try again later.";
+        // errorMessage.style.display = "block";
+        console.error("EmailJS Error:", error);
+      });
+  });
+});
+</script>
+
+
+
 </body>
 
 
