@@ -929,7 +929,29 @@
               </div>
             </article>
           </div>
-          <div class="col-xl-4 col-md-6">
+          
+          <!-- Load All CTA Placeholder -->
+          <div class="col-xl-4 col-md-6" id="load-all-cta">
+            <article class="load-all-placeholder">
+              <div class="post-img skeleton-img">
+              </div>
+              <p class="post-category skeleton-text"></p>
+              <h2 class="title">
+                <a href="#" id="load-all-btn" class="load-all-link">
+                  Load All Blog Posts →
+                </a>
+              </h2>
+              <p class="post-overview skeleton-content"></p>
+              <div class="d-flex align-items-center">
+                <div class="post-meta">
+                  <p class="post-date skeleton-text"></p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Hidden blog posts (6-9) -->
+          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
             <article>
               <div class="post-img">
                 <img src="https://miro.medium.com/v2/resize:fit:1200/1*FKiE4ER9G7zfkLcpMVKqjA.png" alt="OpenID and OAuth">
@@ -956,7 +978,7 @@
               </div>
             </article>
           </div>
-          <div class="col-xl-4 col-md-6">
+          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
             <article>
               <div class="post-img">
                 <img src="https://miro.medium.com/v2/resize:fit:1200/1*xxRg-pan7tDond392GSV7Q.png" alt="Token Based Authentication in Web Applications">
@@ -983,7 +1005,7 @@
               </div>
             </article>
           </div>
-          <div class="col-xl-4 col-md-6">
+          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
             <article>
               <div class="post-img">
                 <img src="https://miro.medium.com/v2/resize:fit:1200/1*4kY3h2c-sJO3sU-Rh9Z1HA.png" alt="Session Based Authentication (Cookie)">
@@ -1334,6 +1356,25 @@
             console.error("EmailJS Error:", error);
           });
       });
+
+      // Load All Blogs functionality
+      const loadAllBtn = document.getElementById("load-all-btn");
+      const loadAllCta = document.getElementById("load-all-cta");
+      const hiddenBlogs = document.querySelectorAll(".hidden-blog");
+
+      if (loadAllBtn) {
+        loadAllBtn.addEventListener("click", function(event) {
+          event.preventDefault();
+          
+          // Show all hidden blog posts
+          hiddenBlogs.forEach(function(blog) {
+            blog.style.display = "block";
+          });
+          
+          // Hide the Load All CTA
+          loadAllCta.style.display = "none";
+        });
+      }
     });
   </script>
 
