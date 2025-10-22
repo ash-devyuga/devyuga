@@ -1218,9 +1218,12 @@
               <div class="form-group mt-3">
                 <textarea name="message" class="form-control" rows="7" placeholder="Message" required></textarea>
               </div>
+              <!-- Honeypot field - hidden from users but visible to bots -->
+              <input type="text" name="website" class="honeypot-field" tabindex="-1" autocomplete="off">
+              <input type="hidden" name="form_load_time" id="form_load_time">
               <div class="my-3">
                 <div class="loading" style="display:none;">Loading...</div>
-                <!-- <div class="error-message" style="display:none; color:red;"></div> -->
+                <div class="error-message" style="display:none; color:red;"></div>
                 <div class="sent-message" style="display:none; color:white;">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center">
@@ -1324,15 +1327,245 @@
 
       const form = document.getElementById("contact-form");
       const loading = form.querySelector(".loading");
-      // const errorMessage = form.querySelector(".error-message");
+      const errorMessage = form.querySelector(".error-message");
       const sentMessage = form.querySelector(".sent-message");
+
+      // Record form load time for time-based validation
+      const formLoadTime = Date.now();
+      document.getElementById("form_load_time").value = formLoadTime;
+
+      // Spam detection helper functions
+      function isValidEmail(email) {
+        // Advanced email validation
+        const emailPattern = /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+$/;
+
+        // Check basic pattern
+        if (!emailPattern.test(email)) {
+          return false;
+        }
+
+        // Check for common disposable/temporary email domains
+        const disposableDomains = [
+          'tempmail', 'throwaway', 'guerrillamail', '10minutemail', 'mailinator',
+          'trashmail', 'fakeinbox', 'yopmail', 'maildrop', 'getnada', 'temp-mail',
+          'sharklasers', 'guerrillamailblock', 'spam4', 'grr.la', 'mailnesia',
+          'discard.email', 'discardmail', 'mintemail', 'emailondeck'
+        ];
+
+        const emailLower = email.toLowerCase();
+        if (disposableDomains.some(domain => emailLower.includes(domain))) {
+          return false;
+        }
+
+        // Check for suspicious patterns
+        if (email.split('@')[0].length < 2) { // Username too short
+          return false;
+        }
+
+        // Check for excessive dots or special characters
+        if ((email.match(/\./g) || []).length > 5) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function containsSpamKeywords(text) {
+        const spamKeywords = [
+          // Pharmaceutical spam
+          /viagra/gi, /cialis/gi, /pharmacy/gi, /prescription/gi, /pills/gi,
+          // Gambling
+          /casino/gi, /poker/gi, /betting/gi, /lottery/gi, /jackpot/gi,
+          // Financial scams
+          /winner/gi, /prize/gi, /won.*\$/gi, /claim.*prize/gi, /inheritance/gi,
+          /cryptocurrency/gi, /crypto/gi, /bitcoin/gi, /forex/gi, /trading/gi,
+          /investment opportunity/gi, /guaranteed.*return/gi, /double.*money/gi,
+          // Work from home scams
+          /make money/gi, /work from home/gi, /free money/gi, /earn.*daily/gi,
+          /passive income/gi, /get rich/gi, /financial freedom/gi,
+          // Generic spam
+          /click here/gi, /buy now/gi, /limited time/gi, /act now/gi,
+          /order now/gi, /call now/gi, /hurry/gi, /urgent/gi,
+          /congratulations!/gi, /you've been selected/gi, /exclusive offer/gi,
+          // SEO spam
+          /seo service/gi, /increase traffic/gi, /boost ranking/gi,
+          /backlinks/gi, /website optimization/gi,
+          // Loan/credit spam
+          /loan approved/gi, /credit score/gi, /debt relief/gi, /refinance/gi,
+          // Adult content
+          /adult/gi, /dating/gi, /hookup/gi, /singles/gi,
+          // Common spam phrases
+          /unsubscribe/gi, /opt-out/gi, /remove.*list/gi,
+          /please verify/gi, /confirm.*account/gi, /suspended.*account/gi
+        ];
+        return spamKeywords.some(keyword => keyword.test(text));
+      }
+
+      function hasExcessiveLinks(text) {
+        const urlPattern = /(https?:\/\/[^\s]+)|(\b\w+\.(com|net|org|io|co|biz|info)\b)/gi;
+        const matches = text.match(urlPattern) || [];
+        return matches.length > 1; // Reduced to max 1 link
+      }
+
+      function hasRepeatedChars(text) {
+        // Check for repeated characters (more strict)
+        return /(.)\1{5,}/.test(text);
+      }
+
+      function hasSuspiciousPattern(text) {
+        // Check for all caps (more than 50% of text)
+        const capsCount = (text.match(/[A-Z]/g) || []).length;
+        const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
+        if (letterCount > 0 && (capsCount / letterCount) > 0.5) {
+          return true;
+        }
+
+        // Check for excessive special characters
+        const specialChars = (text.match(/[!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/g) || []).length;
+        if (specialChars > text.length * 0.2) { // More than 20% special chars
+          return true;
+        }
+
+        // Check for excessive numbers
+        const numbers = (text.match(/\d/g) || []).length;
+        if (numbers > text.length * 0.3) { // More than 30% numbers
+          return true;
+        }
+
+        return false;
+      }
+
+      function isRateLimited() {
+        const lastSubmission = localStorage.getItem('lastFormSubmission');
+        if (lastSubmission) {
+          const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission);
+          const cooldownPeriod = 180000; // 3 minutes (increased from 1 minute)
+          return timeSinceLastSubmission < cooldownPeriod;
+        }
+        return false;
+      }
+
+      function getSubmissionCount() {
+        const today = new Date().toDateString();
+        const submissionData = localStorage.getItem('formSubmissionData');
+
+        if (submissionData) {
+          const data = JSON.parse(submissionData);
+          if (data.date === today) {
+            return data.count;
+          }
+        }
+        return 0;
+      }
+
+      function updateSubmissionCount() {
+        const today = new Date().toDateString();
+        localStorage.setItem('formSubmissionData', JSON.stringify({
+          date: today,
+          count: getSubmissionCount() + 1
+        }));
+      }
+
+      function validateForm() {
+        const honeypot = form.querySelector("input[name='website']").value;
+        const name = form.querySelector("input[name='from_name']").value;
+        const email = form.querySelector("input[name='email']").value;
+        const subject = form.querySelector("input[name='subject']").value;
+        const message = form.querySelector("textarea[name='message']").value;
+
+        // Check honeypot
+        if (honeypot) {
+          console.warn("Honeypot triggered");
+          return { valid: false, error: "Please try again." };
+        }
+
+        // Check time-based validation (minimum 5 seconds to fill form)
+        const submissionTime = Date.now();
+        const timeTaken = submissionTime - formLoadTime;
+        if (timeTaken < 5000) {
+          console.warn("Form submitted too quickly");
+          return { valid: false, error: "Please take your time to fill out the form." };
+        }
+
+        // Check rate limiting (3 minutes between submissions)
+        if (isRateLimited()) {
+          return { valid: false, error: "Please wait 3 minutes before submitting again." };
+        }
+
+        // Check daily submission limit (max 5 per day per browser)
+        const submissionCount = getSubmissionCount();
+        if (submissionCount >= 5) {
+          return { valid: false, error: "Daily submission limit reached. Please try again tomorrow." };
+        }
+
+        // Validate email with advanced checks
+        if (!isValidEmail(email)) {
+          return { valid: false, error: "Please enter a valid email address." };
+        }
+
+        // Validate name (no numbers, reasonable length, no special chars)
+        if (name.length < 2 || name.length > 50) {
+          return { valid: false, error: "Please enter a valid name (2-50 characters)." };
+        }
+        if (/\d{2,}/.test(name)) {
+          return { valid: false, error: "Please enter a valid name without numbers." };
+        }
+        if (/[!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/.test(name)) {
+          return { valid: false, error: "Please enter a valid name without special characters." };
+        }
+
+        // Validate subject
+        if (subject.length < 3 || subject.length > 100) {
+          return { valid: false, error: "Subject must be between 3-100 characters." };
+        }
+
+        // Check message length (stricter)
+        if (message.length < 20) {
+          return { valid: false, error: "Please provide a more detailed message (minimum 20 characters)." };
+        }
+        if (message.length > 2000) {
+          return { valid: false, error: "Your message is too long (maximum 2000 characters)." };
+        }
+
+        // Check for spam keywords
+        const allText = `${name} ${email} ${subject} ${message}`;
+        if (containsSpamKeywords(allText)) {
+          return { valid: false, error: "Your message contains suspicious content. Please revise." };
+        }
+
+        // Check for excessive links (max 1 link)
+        if (hasExcessiveLinks(message)) {
+          return { valid: false, error: "Please limit links in your message (maximum 1 link allowed)." };
+        }
+
+        // Check for repeated characters
+        if (hasRepeatedChars(message) || hasRepeatedChars(name) || hasRepeatedChars(subject)) {
+          return { valid: false, error: "Your message contains invalid content." };
+        }
+
+        // Check for suspicious patterns
+        if (hasSuspiciousPattern(message)) {
+          return { valid: false, error: "Your message contains suspicious formatting. Please write normally." };
+        }
+
+        return { valid: true };
+      }
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         loading.style.display = "block";
-        // errorMessage.style.display = "none";
+        errorMessage.style.display = "none";
         sentMessage.style.display = "none";
+
+        // Validate form for spam
+        const validation = validateForm();
+        if (!validation.valid) {
+          loading.style.display = "none";
+          errorMessage.textContent = validation.error;
+          errorMessage.style.display = "block";
+          return;
+        }
 
         // Map input values to EmailJS template variables
         const formData = {
@@ -1348,11 +1581,19 @@
             loading.style.display = "none";
             sentMessage.style.display = "block";
             form.reset();
+            // Update rate limiting
+            localStorage.setItem('lastFormSubmission', Date.now().toString());
+            // Update submission count
+            updateSubmissionCount();
+            // Reset form load time
+            setTimeout(() => {
+              document.getElementById("form_load_time").value = Date.now();
+            }, 100);
           })
           .catch((error) => {
             loading.style.display = "none";
-            // errorMessage.textContent = "Failed to send message. Please try again later.";
-            // errorMessage.style.display = "block";
+            errorMessage.textContent = "Failed to send message. Please try again later.";
+            errorMessage.style.display = "block";
             console.error("EmailJS Error:", error);
           });
       });
