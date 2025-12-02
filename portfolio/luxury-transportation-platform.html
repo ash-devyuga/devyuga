@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case Study: Premium Luxury Transportation Platform - A complete end-to-end solution delivered by Devyuga Software Solutions Inc.">
+    <meta name="keywords" content="Devyuga, software development, mobile app development, Flutter, transportation app, case study">
+    <title>Luxury Transportation Platform - Case Study | Devyuga Software Solutions</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #3498DB;
+            --accent-color: #E74C3C;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-light: #F8F9FA;
+            --bg-dark: #1A1E23;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #3498DB 0%, #2C3E50 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--secondary-color);
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background: var(--bg-light);
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .breadcrumb {
+            margin-bottom: 0;
+        }
+
+        /* Hero Section */
+        .case-study-hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(44, 62, 80, 0.05) 100%);
+        }
+
+        .badge-case-study {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .client-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .client-info-item {
+            margin-bottom: 1rem;
+        }
+
+        .client-info-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-block;
+            width: 150px;
+        }
+
+        .client-info-value {
+            color: var(--text-light);
+        }
+
+        /* Project Metrics */
+        .metrics-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metric-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Prototype Section */
+        .prototype-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .prototype-container {
+            background: #f5f5f5;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            padding-top: 56.25%;
+        }
+
+        .prototype-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Tech Stack */
+        .tech-stack-section {
+            padding: 4rem 0;
+        }
+
+        .tech-category {
+            margin-bottom: 2rem;
+        }
+
+        .tech-category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            border-color: var(--secondary-color);
+            transform: scale(1.03);
+        }
+
+        .result-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonial */
+        .testimonial-section {
+            padding: 4rem 0;
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-position {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(44, 62, 80, 0.05) 100%);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .case-study-title {
+                font-size: 2rem;
+            }
+
+            .case-study-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .metric-value {
+                font-size: 2rem;
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .nav-link {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                DEVYUGA <span>Software Solutions</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../portfolio.html">Portfolio</a></li>
+                    <li class="breadcrumb-item active">Luxury Transportation Platform</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="badge-case-study">CASE STUDY</div>
+                    <h1 class="case-study-title fade-in">Premium Luxury Transportation Platform</h1>
+                    <p class="case-study-subtitle fade-in">
+                        A complete end-to-end mobile solution for luxury ride-hailing services
+                    </p>
+                    <p class="lead fade-in">
+                        We partnered with a leading luxury transportation company to develop a sophisticated 
+                        ride-hailing platform exclusively for premium vehicles. This comprehensive solution 
+                        showcases our expertise in building scalable, real-time applications with exceptional 
+                        user experiences for the luxury market segment.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="client-info fade-in">
+                        <h4 class="mb-3">Project Overview</h4>
+                        <div class="client-info-item">
+                            <span class="client-info-label">Industry:</span>
+                            <span class="client-info-value">Luxury Transportation</span>
+                        </div>
+                        <div class="client-info-item">
+                            <span class="client-info-label">Duration:</span>
+                            <span class="client-info-value">3 Months</span>
+                        </div>
+                        <div class="client-info-item">
+                            <span class="client-info-label">Team Size:</span>
+                            <span class="client-info-value">6 Developers</span>
+                        </div>
+                        <div class="client-info-item">
+                            <span class="client-info-label">Platforms:</span>
+                            <span class="client-info-value">iOS & Android</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="metric-card fade-in">
+                        <div class="metric-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="metric-value">2</div>
+                        <div class="metric-label">Mobile Applications</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="metric-card fade-in">
+                        <div class="metric-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">Months to Launch</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="metric-card fade-in">
+                        <div class="metric-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="metric-value">15+</div>
+                        <div class="metric-label">Features Delivered</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="metric-card fade-in">
+                        <div class="metric-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">On-time Delivery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Prototype -->
+    <section class="prototype-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Interactive Prototype</h2>
+            <p class="section-subtitle fade-in">
+                Experience the user interface we designed and developed
+            </p>
+            <div class="prototype-container fade-in">
+                <iframe 
+                    class="prototype-iframe"
+                    src="https://www.figma.com/proto/Y1Crfvv5i8qYCGlXiHS4md/Qride-Wireframes?node-id=24-540&p=f&t=YKjCEmSeU3aaNFFt-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=24%3A540&show-proto-sidebar=1"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Features We Delivered</h2>
+            <p class="section-subtitle fade-in">
+                Comprehensive functionality built from the ground up
+            </p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Real-Time GPS Tracking</h3>
+                        <p class="feature-description">
+                            Advanced GPS tracking with speed monitoring ensures complete transparency 
+                            and safety throughout the journey.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Ride Matching</h3>
+                        <p class="feature-description">
+                            Dynamic algorithm pairs users with the perfect luxury vehicle and 
+                            professional chauffeur for optimal experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3 class="feature-title">Airport Concierge</h3>
+                        <p class="feature-description">
+                            Specialized airport pickup service with flight tracking integration 
+                            for stress-free transfers.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h3 class="feature-title">Personalized Ambience</h3>
+                        <p class="feature-description">
+                            Customizable ride experience with preferred scents, entertainment, 
+                            lighting, and ambience settings.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 class="feature-title">Route History</h3>
+                        <p class="feature-description">
+                            Comprehensive trip history tracking for operational insights 
+                            and user convenience.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Notifications</h3>
+                        <p class="feature-description">
+                            Intelligent push notifications and email alerts for speed monitoring 
+                            and important updates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Technology Implementation</h2>
+            <p class="section-subtitle fade-in">
+                Enterprise-grade architecture we designed and deployed
+            </p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-category fade-in">
+                        <h4 class="tech-category-title">Backend</h4>
+                        <div>
+                            <span class="tech-badge">.NET Core</span>
+                            <span class="tech-badge">Microservices</span>
+                            <span class="tech-badge">RESTful APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-category fade-in">
+                        <h4 class="tech-category-title">API Layer</h4>
+                        <div>
+                            <span class="tech-badge">AWS AppSync</span>
+                            <span class="tech-badge">GraphQL</span>
+                            <span class="tech-badge">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-category fade-in">
+                        <h4 class="tech-category-title">Mobile</h4>
+                        <div>
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Dart</span>
+                            <span class="tech-badge">Native APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tech-category fade-in">
+                        <h4 class="tech-category-title">Security</h4>
+                        <div>
+                            <span class="tech-badge">AWS Cognito</span>
+                            <span class="tech-badge">OAuth 2.0</span>
+                            <span class="tech-badge">Encryption</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results/Deliverables -->
+    <section class="results-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Project Deliverables</h2>
+            <p class="section-subtitle fade-in">
+                What we successfully delivered to our client
+            </p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Passenger Mobile App</h3>
+                        <p class="result-description">iOS & Android Applications</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Driver Application</h3>
+                        <p class="result-description">Professional Driver Interface</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">UI/UX Design</h3>
+                        <p class="result-description">Complete Wireframes & Prototypes</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Real-time Tracking</h3>
+                        <p class="result-description">GPS & Speed Monitoring</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Airport Features</h3>
+                        <p class="result-description">Flight Tracking Integration</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Luxury Customization</h3>
+                        <p class="result-description">Ambience & Entertainment Settings</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Push Notifications</h3>
+                        <p class="result-description">Speed Alerts & Email Updates</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Route History</h3>
+                        <p class="result-description">Trip Tracking & Records</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-card fade-in">
+                        <div class="result-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="result-title">Scalable Backend</h3>
+                        <p class="result-description">Future-Ready Architecture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Highlights -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="testimonial-content fade-in">
+                <h2 class="text-white mb-4">Project Highlights</h2>
+                <div class="row text-white">
+                    <div class="col-md-4 mb-3">
+                        <i class="fas fa-trophy mb-3" style="font-size: 2rem; opacity: 0.9;"></i>
+                        <h4>Successful Launch</h4>
+                        <p style="opacity: 0.9;">Delivered a fully functional luxury transportation platform within the agreed timeline</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="fas fa-users mb-3" style="font-size: 2rem; opacity: 0.9;"></i>
+                        <h4>Dual User Experience</h4>
+                        <p style="opacity: 0.9;">Created seamless experiences for both passengers and professional drivers</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="fas fa-cogs mb-3" style="font-size: 2rem; opacity: 0.9;"></i>
+                        <h4>Scalable Architecture</h4>
+                        <p style="opacity: 0.9;">Built with future expansion in mind to support additional luxury vehicle integrations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title fade-in">Ready to Build Your Next Platform?</h2>
+            <p class="cta-subtitle fade-in">
+                Let's discuss how we can help transform your vision into reality
+            </p>
+            <div class="fade-in">
+                <a href="mailto:contact@devyuga.com" class="btn btn-primary me-3 mb-3">Start Your Project</a>
+                <a href="../portfolio.html" class="btn btn-outline mb-3">View More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    DEVYUGA Software Solutions Inc.
+                </div>
+                <p class="mb-3">Building Tomorrow's Digital Solutions</p>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#services">Services</a>
+                    <a href="../portfolio.html">Portfolio</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <div class="mt-3">
+                    <p style="opacity: 0.7;">
+                        Specializing in Healthcare Technology | Mobile Applications | Enterprise Solutions
+                    </p>
+                    <p style="opacity: 0.5;">
+                        © 2024 Devyuga Software Solutions Inc. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'white';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animate metrics on scroll
+        let animated = false;
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + (element.dataset.suffix || '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const metricsSection = document.querySelector('.metrics-section');
+        if (metricsSection) {
+            const metricsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        document.querySelectorAll('.metric-value').forEach(metric => {
+                            const text = metric.textContent;
+                            if (text.includes('2')) {
+                                animateValue(metric, 0, 2, 1000);
+                            } else if (text.includes('3')) {
+                                animateValue(metric, 0, 3, 1200);
+                            } else if (text.includes('15')) {
+                                metric.dataset.suffix = '+';
+                                animateValue(metric, 0, 15, 1500);
+                            } else if (text.includes('100')) {
+                                metric.dataset.suffix = '%';
+                                animateValue(metric, 0, 100, 2000);
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            metricsObserver.observe(metricsSection);
+        }
+    </script>
+</body>
+</html>
