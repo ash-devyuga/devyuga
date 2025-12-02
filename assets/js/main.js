@@ -119,7 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
    * Initiate glightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
+    width: '100vw',
+    height: '100vh',
+    zoomable: false,
+    draggable: false
   });
 
   /**

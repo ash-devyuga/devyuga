@@ -121,7 +121,7 @@
           <p>At <strong>Devyuga</strong>, we help founders and growing businesses turn ideas into high-quality, secure, and scalable software solutions; from concept to launch.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="https://calendly.com/ash-singla-devyuga/meet" target="_blank" class="btn-get-started">Build My Product →</a>
-            <a href="https://calendly.com/ash-singla-devyuga/meet" target="_blank" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-calendar-check"></i><span>Book a Free 30-Minute Discovery Call</span></a>
+            <a href="#" onclick="openCalendlyModal(event)" class="btn-watch-video d-flex align-items-center"><i class="bi bi-calendar-check"></i><span>Book a Free 30-Minute Discovery Call</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
@@ -131,8 +131,10 @@
         </div>
       </div>
     </div>
+  </section>
+  <section id="services" class="hero blur-grad">
 
-    <div id="services" style="scroll-margin-top: 120px;" class="icon-boxes position-relative">
+    <div id="Services" style="scroll-margin-top: 120px;" class="icon-boxes position-relative">
       <div class="container position-relative">
         <div class="row gy-4 mt-5">
           <div class="col-md-6 position-relative" data-aos="fade-up" data-aos-delay="100">
@@ -1402,6 +1404,15 @@
 
   <div id="preloader"></div>
 
+  <!-- Calendly Modal -->
+  <div id="calendly-modal" class="calendly-modal" style="display: none;">
+    <div class="calendly-modal-overlay" onclick="closeCalendlyModal()"></div>
+    <div class="calendly-modal-content">
+      <button class="calendly-modal-close" onclick="closeCalendlyModal()">&times;</button>
+      <iframe id="calendly-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -1417,6 +1428,31 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script>
+    // Calendly Modal Functions
+    function openCalendlyModal(event) {
+      event.preventDefault();
+      const modal = document.getElementById('calendly-modal');
+      const iframe = document.getElementById('calendly-iframe');
+      iframe.src = 'https://calendly.com/ash-singla-devyuga/meet';
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCalendlyModal() {
+      const modal = document.getElementById('calendly-modal');
+      const iframe = document.getElementById('calendly-iframe');
+      modal.style.display = 'none';
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCalendlyModal();
+      }
+    });
+
     document.addEventListener("DOMContentLoaded", function () {
       // Initialize EmailJS
       emailjs.init("sfdbCxS2BHHEmelZO");
