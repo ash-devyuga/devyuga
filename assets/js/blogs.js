@@ -1,5 +1,20 @@
 const mediumContent = [
     {
+        url: "https://medium.com/@ishubansal1400/understanding-ai-systems-the-beginner-mistakes-everyone-makes-with-llms-and-chatbots-440f9453aa5d",
+        category: "Technology - Software Best Practices",
+        time: "2025-11-26",
+    },
+    {
+        url: "https://medium.com/@ishubansal1400/why-good-engineers-write-scopes-before-code-1edad6f400cb",
+        category: "Technology - Software Best Practices",
+        time: "2025-10-10",
+    },
+    {
+        url: "https://medium.com/@ishubansal1400/why-defining-scope-saves-projects-and-sanity-2da56206dda0",
+        category: "Technology - Software Best Practices",
+        time: "2025-10-01",
+    },
+    {
         url: "https://medium.com/@ishubansal1400/the-modular-api-handler-pattern-scalable-frontend-service-calls-79dee191c273",
         category: "Technology - Frontend",
         time: "2025-09-19",
