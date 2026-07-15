@@ -30,1730 +30,1085 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/img/brand/logo.svg" />
   <meta property="og:url" content="https://www.devyuga.com" />
-  <meta charset="utf-8">
-
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
 
-  <!-- lottiefiles -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Figtree (headings) / Noto Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="assets/css/devyuga.css" rel="stylesheet">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://devyuga.com/" />
-
 </head>
 
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <!-- ======= Header ======= -->
-  <!--   
-  <section id="topbar" class="topbar d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@devyuga.com">info@devyuga.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-
-        <a href="https://www.instagram.com/devyuga_inc/" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/devyuga/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
--->
-
-
-  <!-- End Top Bar -->
-
-  <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/favicon.png" alt="Devyuga name logo">
-        <h2>Devyuga<span></span></h2>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="assets/img/favicon.png" alt="" width="38" height="38">
+        Devyuga
       </a>
-      <nav id="navbar" class="navbar">
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"
+        aria-label="Toggle navigation menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="/portfolio/">Work</a></li>
+          <li><a href="/about/">About</a></li>
           <li><a href="#blog">Blog</a></li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" onclick="openCalendlyModal(event)" class="btn btn-primary nav-cta">Book a Call</a></li>
         </ul>
       </nav>
-      <!-- .navbar -->
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
     </div>
-  </header><!-- End Header -->
-  <!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero blur-grad">
-    <div class="container position-relative">
-      <div class="row gy-5 " data-aos="fade-in">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-          <h1>Build Your Vision into a Scalable, AI-Ready Product, with a Team You Can Trust</h1>
-          <p>At <strong>Devyuga</strong>, we help founders and growing businesses turn ideas into high-quality, secure, and scalable software solutions; from concept to launch.</p>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="https://calendly.com/ash-singla-devyuga/meet" target="_blank" class="btn-get-started">Build My Product →</a>
-            <a href="#" onclick="openCalendlyModal(event)" class="btn-watch-video d-flex align-items-center"><i class="bi bi-calendar-check"></i><span>Book a Free 30-Minute Discovery Call</span></a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2">
-          <lottie-player src="https://lottie.host/e48c97f1-2e49-4439-bcad-3a1c5382826c/8qu0w1dO8J.json"
-            background="transparent" speed="1" style="width: 90%; margin:auto" loop autoplay direction="1"
-            mode="normal"></lottie-player>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="services" class="hero blur-grad">
-
-    <div id="Services" style="scroll-margin-top: 120px;" class="icon-boxes position-relative">
-      <div class="container position-relative">
-        <div class="row gy-4 mt-5">
-          <div class="col-md-6 position-relative" data-aos="fade-up" data-aos-delay="100">
-            <div class="blur">
-              <div class="glow"></div>
-            </div>
-            <div class="icon-box">
-              <div class="icon">
-                <img src="assets/img/Graphic-Fees.png" width="150" alt="Graphic Fees img" />
-              </div>
-              <h4 class="title"><a href="" class="stretched-link">Cloud Solutions</a></h4>
-              <p>Take advantage of the scalability and flexibility of cloud computing with our consulting services.
-                Whether you need help migrating to the cloud, optimizing your cloud infrastructure, or developing
-                cloud-native applications, we have you covered with secure, compliant solutions.</p>
-            </div>
-          </div><!--End Icon Box -->
-          <div class="col-md-6 position-relative" data-aos="fade-up" data-aos-delay="200">
-            <div class="blur">
-              <div class="glow-purple"></div>
-            </div>
-            <div class="icon-box">
-              <div class="icon">
-                <img src="assets/img/Graphic-Pools.png" width="150" alt="Graphic Pools img" />
-              </div>
-              <h4 class="title"><a href="" class="stretched-link">Software Development</a></h4>
-              <p>Our expert developers can turn your ideas into reality. Whether you need a custom web application,
-                mobile app, or desktop software, we have the skills and experience to deliver high-quality solutions
-                that meet your requirements across diverse industries.</p>
-            </div>
-          </div>
-          <div class="col-md-6 position-relative" data-aos="fade-up" data-aos-delay="300">
-            <div class="blur">
-              <div class="glow-pink"></div>
-            </div>
-            <div class="icon-box">
-              <div class="icon">
-                <img src="assets/img/Graphic-Oracle.png" width="150" alt="Graphic-Oracle" />
-              </div>
-              <h4 class="title"><a href="" class="stretched-link">Data & Analytics</a></h4>
-              <p>Turn your data into insights with our data analytics services. Our team can help you collect, analyze,
-                and visualize your data to make informed business decisions and drive growth.</p>
-            </div>
-          </div>
-          <!--End Icon Box -->
-          <div class="col-md-6 position-relative" data-aos="fade-up" data-aos-delay="500">
-            <div class="blur">
-              <div class="glow-pink"></div>
-            </div>
-            <div class="icon-box">
-              <div class="icon">
-                <img src="assets/img/Graphic-Execution.png" width="150" alt="Graphics-Execution" />
-              </div>
-              <h4 class="title"><a href="" class="stretched-link">AI & Machine Learning</a></h4>
-              <p>Unlock the power of AI and machine learning with our consulting services. We can help you integrate AI
-                into your existing systems, develop custom machine learning models, and optimize your processes for
-                maximum efficiency.</p>
-            </div>
-          </div><!--End Icon Box -->
-        </div><!--End Icon Box -->
-      </div>
-    </div>
-  </section>
-  <!-- End Hero Section -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Hero ======= -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Healthcare Technology Expertise
+          </span>
+          <h1>Build your vision into a <em>scalable, AI&#8209;ready</em> product, with a team you can trust</h1>
+          <p class="hero-lede">At <strong>Devyuga</strong>, we help founders and growing businesses turn ideas into
+            high-quality, secure, and scalable software solutions &mdash; from concept to launch.</p>
 
-        <div class="section-header">
-          <h2>Client's Feedback</h2>
-          <p><strong>10+</strong> Trusted Clients.</p>
-        </div>
-
-        <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <div class="d-flex align-items-center">
-                    <img src="assets/img/testimonials/Adam.webp" class="testimonial-img flex-shrink-0" alt="Adam Brown">
-                    <div>
-                      <h3>Adam Brown</h3>
-                      <h4>CEO, Cornerstone Physiotherapy</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Devyuga developed an innovative and user-friendly software for Cornerstone Physiotherapy, which helped them improve patient care and become an industry leader in leveraging technology in rehab. They are a talented team of professionals that can make your vision come to life. I highly recommend the team at Devyuga.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <div class="d-flex align-items-center">
-                    <img src="assets/img/testimonials/andy.jpeg" class="testimonial-img flex-shrink-0" alt="Andy Chou">
-                    <div>
-                      <h3>Andy Chou</h3>
-                      <h4>CEO, Protocol</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Working with Devyuga was a game-changer for Protocol. They built a tailored platform that seamlessly
-                    integrated advanced features, including LLMs, to meet our specific needs. Their ability to combine
-                    innovation with practical execution has been greatly valued by both our team and clients.
-
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <div class="d-flex align-items-center">
-                    <img src="assets/img/testimonials/francois.webp" class="testimonial-img flex-shrink-0" alt="Francois Bolduc">
-                    <div>
-                      <h3>Dr. Francois Bolduc</h3>
-                      <h4>Associate Professor, University of Alberta</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Ash helped us develop a custom software solution and scientific research in the domain of
-                    Neuroscience. The dedication and expertise of the team was evident throughout the project. They
-                    delivered a high-quality solution that met our needs and exceeded our expectations. I highly
-                    recommend Devyuga for any software development project.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <div class="d-flex align-items-center">
-                    <img src="assets/img/testimonials/esmat.jpeg" class="testimonial-img flex-shrink-0" alt="Esmat Naikyar">
-                    <div>
-                      <h3>Esmat Naikyar</h3>
-                      <h4>CEO, NeuralCloud</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                   Devyuga's Team has been great to work with. Their expertise and consultative approach helped us design scalable solutions that fit our needs. They combine technical expertise with market insight to deliver innovative, practical results. I highly recommend them as a reliable partner for future-ready software solutions.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- End testimonial item -->
-
-            <!-- <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <div class="d-flex align-items-center">
-                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt="">
-                    <div>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div> -->
-            <!-- End testimonial item -->
-
+          <div class="hero-actions">
+            <a href="https://calendly.com/ash-singla-devyuga/meet" target="_blank" rel="noopener"
+              class="btn btn-primary">
+              Build My Product
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <a href="#" onclick="openCalendlyModal(event)" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="m9 16 2 2 4-4" />
+              </svg>
+              Free 30-Minute Discovery Call
+            </a>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
 
-      </div>
-    </section><!-- End Testimonials Section -->
-    
-
-    <!-- ======= Clients Section ======= -->
-    <!-- <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-out">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          <div class="hero-trust">
+            <span class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              25+ projects delivered
+            </span>
+            <span class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              10+ trusted clients
+            </span>
+            <span class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              $15M+ portfolio value
+            </span>
           </div>
         </div>
 
-      </div>
-    </section> -->
-    <!-- End Clients Section -->
-
-    <!-- ======= Stats Counter Section ======= -->
-    <section id="stats-counter" class="stats-counter">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4 align-items-center">
-
-          <div class="col-lg-6">
-            <img src="assets/img/charts.png" alt="" class="img-fluid">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mock-card mock-main">
+            <div class="mock-header">
+              <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+              <span class="mock-title">Delivery Dashboard</span>
+            </div>
+            <div class="mock-bars">
+              <div class="mock-bar" style="--w: 86%"></div>
+              <div class="mock-bar" style="--w: 64%"></div>
+              <div class="mock-bar" style="--w: 74%"></div>
+            </div>
+            <div class="mock-chart">
+              <span style="--h: 35%"></span><span style="--h: 55%"></span><span style="--h: 45%"></span><span
+                style="--h: 70%"></span><span style="--h: 60%"></span><span style="--h: 85%"></span><span
+                style="--h: 96%"></span>
+            </div>
           </div>
 
-          <div class="col-lg-6">
-            <h3>Why Choose Devyuga?</h3>
-            <div class="stats-item d-flex align-items-center">
-              <div class="pure-counter">
-                <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2"
-                  class="purecounter">
-                </span><span>+</span>
-              </div>
-              <p><strong>Projects Delivered</strong> Driving tangible results across industries</p>
-            </div><!-- End Stats Item -->
-
-            <div class="stats-item d-flex align-items-center">
-              <div class="pure-counter">
-                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="2"
-                  class="purecounter">
-                </span><span>+</span>
-              </div>
-              <p><strong>Clients Served</strong> Each receiving focused, personalized attention</p>
-            </div><!-- End Stats Item -->
-
-            <!-- <div class="stats-item d-flex align-items-center">
-              <div class="pure-counter">
-                <span data-purecounter-start="0" data-purecounter-end="1500000" data-purecounter-duration="2"
-                  data-purecounter-currency="$" class="purecounter"></span>
-              </div>
-
-              <p><strong>Revenue Generated</strong> Proven business impact</p>
-            </div> -->
-
-            <div class="stats-item d-flex align-items-center">
-              <div class="pure-counter">
-                <span data-purecounter-start="0" data-purecounter-end="15000000" data-purecounter-duration="2"
-                  data-purecounter-currency="$" class="purecounter"></span>
-              </div>
-              <p><strong>Portfolio Value</strong> Showcasing our trusted, high-value projects</p>
-            </div>
-            <!-- End Stats Item -->
-
+          <div class="mock-card mock-badge">
+            <span class="badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </span>
+            <span><strong>Secure &amp; Compliant</strong><small>Healthcare-grade builds</small></span>
           </div>
 
-        </div>
-
-      </div>
-    </section><!-- End Stats Counter Section -->
-
-    <!-- ======= Call To Action Section ======= -->
-    <!--<section id="call-to-action" class="call-to-action">
-      <div class="container text-center" data-aos="zoom-out">
-        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>
-    </section> -->
-    <!-- End Call To Action Section -->
-
-    <!-- ======= Our Services Section ======= -->
-    <section id="why-us" class="services sections-bg position-relative">
-      <div class="waveBg"></div>
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header white-heading">
-          <h2>What makes us different?</h2>
-
-        </div>
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <img src="assets/img/1.png" alt="Experience and Dedication" />
-              </div>
-              <h3>Experience and Dedication</h3>
-              <p>Our software experts possess deep technical knowledge and are passionately dedicated to your success.
-                We go above and beyond to deliver innovative, high-quality solutions that exceed your expectations and
-                drive real business results.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/6.png" alt="Quality-Driven Approach" />
-              </div>
-              <h3>Quality-Driven Approach</h3>
-              <p>Quality is paramount at Devyuga. Our rigorous testing and QA deliver reliable, scalable software. With
-                technical expertise and continuous improvement, we're your trusted partner in unlocking technology's
-                potential to drive your business forward.</p>
-
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-12">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <img src="assets/img/5.png" alt="Tailored Solutions" />
-              </div>
-              <h3>Tailored Solutions</h3>
-              <p>We craft custom software that seamlessly integrates with your business. We take the time to understand
-                your unique challenges and vision, delivering solutions that empower your organization.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-
-
-        </div>
-
-      </div>
-    </section><!-- End Our Services Section -->
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Your Gateway to Technological Excellence</h2>
-          <p>At Devyuga, we understand that choosing the right technology partner is crucial for the success of your
-            business. With deep expertise in healthcare technology, we bring proven experience to every project.</p>
-        </div>
-
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <h3>Innovative Cloud & Mobile Solutions | Devyuga</h3>
-
-            <p>
-              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-              <lottie-player src="https://lottie.host/603ec53c-0c52-4d48-91a3-b1ccc5cb00fb/cv4nMyW1cJ.json"
-                background="#FFFFFF" speed="1" style="width: 100%" loop autoplay direction="1"
-                mode="normal"></lottie-player>
-              Devyuga Software Solutions is your trusted partner for cutting-edge cloud and mobile app development in
-              Calgary. Our expert team crafts tailored software solutions that drive growth, efficiency, and competitive
-              advantage for businesses across North America, with particular expertise in healthcare technology.<br /><br />
-              Leveraging the latest cloud and mobile technologies, we create future-proof, scalable solutions that meet
-              your unique needs. From startups to enterprises, we work closely with you to unlock your business's full
-              potential.<br /><br />
-              Experience innovation and shape the future of tech with Devyuga Solutions.
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> Cutting-edge cloud and mobile solutions that redefine
-                  scalability and performance.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Expertise in emerging technologies like AI, machine
-                  learning, and specialized industry solutions.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Future-proof and adaptable solutions that evolve with
-                  changing market dynamics.</li>
-              </ul>
-
-
-            </div>
-            <br /><br />
-            <p>At <strong>Devyuga</strong>, we turn bold ideas into powerful <strong>web applications</strong>,
-              high-performing <strong>mobile apps</strong>, and scalable <strong>cloud solutions</strong> that
-              accelerate business growth and maximize efficiency. Our expert team of <strong>software developers</strong> and
-              creative <strong>UI/UX designers</strong> blends technical mastery with a deep understanding of your
-              business needs to deliver solutions that truly make an impact.</p>
-
-            <p>What makes us different? Our <strong>collaborative mindset</strong> and <strong>agile development
-                process</strong>. From brainstorming to launch, we partner with you at every stage, ensuring seamless
-              integration with your workflows, transparent communication, and faster go-to-market delivery.</p>
-
-            <p>Backed by a proven track record across industries including healthcare, we specialize in building <strong>intuitive,
-                user-friendly, and future-ready software solutions</strong> that consistently exceed expectations.
-              <strong>Bring your vision to life with Devyuga</strong> — let's build something extraordinary together.
-            </p>
+          <div class="mock-card mock-badge mock-badge-2">
+            <span class="badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </span>
+            <span><strong>Concept to Launch</strong><small>8&ndash;16 week delivery</small></span>
           </div>
         </div>
-
       </div>
     </section>
-    <!-- End About Us Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio sections-bg">
-      <div class="container" data-aos="fade-up">
+    <!-- ======= Compliance band ======= -->
+    <aside class="compliance-band" aria-label="Compliance and security">
+      <div class="container">
+        <span class="band-label">Built for regulated industries</span>
+        <span class="badge-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          HIPAA-aligned
+        </span>
+        <span class="badge-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          PIPEDA
+        </span>
+        <span class="badge-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          HIA &amp; PHIPA
+        </span>
+        <span class="badge-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          GDPR-aware
+        </span>
+        <a href="/compliance/">How we handle compliance &rarr;</a>
+      </div>
+    </aside>
 
-        <div class="section-header">
-          <h2>Portfolio</h2>
-          <p>Explore our past projects and see how we have helped businesses like yours in the past.</p>
+    <!-- ======= Services ======= -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">What we do</span>
+          <h2>Services built for scale</h2>
+          <p>From cloud infrastructure to AI integration, we cover the full lifecycle of modern software delivery.</p>
         </div>
 
-        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+              </svg>
+            </div>
+            <h3>Cloud Solutions</h3>
+            <p>Take advantage of the scalability and flexibility of cloud computing with our consulting services.
+              Whether you need help migrating to the cloud, optimizing your cloud infrastructure, or developing
+              cloud-native applications, we have you covered with secure, compliant solutions.</p>
+          </article>
 
-          <div>
-            <ul class="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Product</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-books">Books</li>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Software Development</h3>
+            <p>Our expert developers can turn your ideas into reality. Whether you need a custom web application,
+              mobile app, or desktop software, we have the skills and experience to deliver high-quality solutions
+              that meet your requirements across diverse industries.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+            <h3>Data &amp; Analytics</h3>
+            <p>Turn your data into insights with our data analytics services. Our team can help you collect, analyze,
+              and visualize your data to make informed business decisions and drive growth.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
+            </div>
+            <h3>AI &amp; Machine Learning</h3>
+            <p>Unlock the power of AI and machine learning with our consulting services. We can help you integrate AI
+              into your existing systems, develop custom machine learning models, and optimize your processes for
+              maximum efficiency.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Metrics ======= -->
+    <section id="stats-counter" class="metrics">
+      <div class="container metrics-inner">
+        <div class="metrics-copy reveal">
+          <span class="section-eyebrow" style="color:#38BDF8">Why choose Devyuga</span>
+          <h2>Proven results, personal attention</h2>
+          <p>Every engagement gets senior engineers, transparent communication, and outcomes we're proud to put our
+            name on.</p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric reveal">
+            <span class="metric-value"><span data-count="25" data-format="plain">0</span><span
+                class="accent">+</span></span>
+            <span class="metric-label">Projects Delivered</span>
+            <small>Driving tangible results across industries</small>
+          </div>
+          <div class="metric reveal">
+            <span class="metric-value"><span data-count="10" data-format="plain">0</span><span
+                class="accent">+</span></span>
+            <span class="metric-label">Clients Served</span>
+            <small>Each receiving focused, personalized attention</small>
+          </div>
+          <div class="metric reveal">
+            <span class="metric-value"><span data-count="15000000" data-format="money">$0M</span><span
+                class="accent">+</span></span>
+            <span class="metric-label">Portfolio Value</span>
+            <small>Showcasing our trusted, high-value projects</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Testimonials ======= -->
+    <section id="testimonials" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Client feedback</span>
+          <h2>Trusted by founders and clinical leaders</h2>
+          <p><strong>10+</strong> trusted clients across healthcare, research, and technology.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>Devyuga developed an innovative and user-friendly software for Cornerstone Physiotherapy, which
+              helped them improve patient care and become an industry leader in leveraging technology in rehab. They
+              are a talented team of professionals that can make your vision come to life. I highly recommend the team
+              at Devyuga.</blockquote>
+            <div class="testimonial-person">
+              <img src="assets/img/testimonials/Adam.webp" alt="Adam Brown" width="48" height="48" loading="lazy">
+              <div><strong>Adam Brown</strong><span>CEO, Cornerstone Physiotherapy</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>Working with Devyuga was a game-changer for Protocol. They built a tailored platform that
+              seamlessly integrated advanced features, including LLMs, to meet our specific needs. Their ability to
+              combine innovation with practical execution has been greatly valued by both our team and clients.</blockquote>
+            <div class="testimonial-person">
+              <img src="assets/img/testimonials/andy.jpeg" alt="Andy Chou" width="48" height="48" loading="lazy">
+              <div><strong>Andy Chou</strong><span>CEO, Protocol</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>Ash helped us develop a custom software solution and scientific research in the domain of
+              Neuroscience. The dedication and expertise of the team was evident throughout the project. They delivered
+              a high-quality solution that met our needs and exceeded our expectations. I highly recommend Devyuga for
+              any software development project.</blockquote>
+            <div class="testimonial-person">
+              <img src="assets/img/testimonials/francois.webp" alt="Dr. Francois Bolduc" width="48" height="48"
+                loading="lazy">
+              <div><strong>Dr. Francois Bolduc</strong><span>Associate Professor, University of Alberta</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote>Devyuga's Team has been great to work with. Their expertise and consultative approach helped us
+              design scalable solutions that fit our needs. They combine technical expertise with market insight to
+              deliver innovative, practical results. I highly recommend them as a reliable partner for future-ready
+              software solutions.</blockquote>
+            <div class="testimonial-person">
+              <img src="assets/img/testimonials/esmat.jpeg" alt="Esmat Naikyar" width="48" height="48" loading="lazy">
+              <div><strong>Esmat Naikyar</strong><span>CEO, NeuralCloud</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Case Study ======= -->
+    <section id="case-study" class="section">
+      <div class="container">
+        <div class="case-study reveal">
+          <div class="case-study-body">
+            <span class="case-study-tag">Featured case study</span>
+            <h3>Premium Luxury Transportation Platform</h3>
+            <p>How we designed and delivered a high-end booking platform end to end &mdash; from architecture and
+              secure payments to a polished customer experience.</p>
+            <a href="portfolio/luxury-transportation-platform.html" class="btn btn-light">
+              Read the case study
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <p style="margin: 16px 0 0; font-size: 15px;"><a href="/portfolio/" style="color: #38BDF8;">Or browse all
+                our work &rarr;</a></p>
+          </div>
+          <div class="case-study-visual" aria-hidden="true">
+            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="18" cy="5" r="2" />
+              <path d="M6 17V8a2 2 0 0 1 2-2h5" />
+              <path d="M18 7v9a2 2 0 0 1-2 2H9" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Why us ======= -->
+    <section id="why-us" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Our difference</span>
+          <h2>What makes us different?</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              Experience and Dedication
+            </h3>
+            <p>Our software experts possess deep technical knowledge and are passionately dedicated to your success. We
+              go above and beyond to deliver innovative, high-quality solutions that exceed your expectations and drive
+              real business results.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <h3>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Quality-Driven Approach
+            </h3>
+            <p>Quality is paramount at Devyuga. Our rigorous testing and QA deliver reliable, scalable software. With
+              technical expertise and continuous improvement, we're your trusted partner in unlocking technology's
+              potential to drive your business forward.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <h3>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+              Tailored Solutions
+            </h3>
+            <p>We craft custom software that seamlessly integrates with your business. We take the time to understand
+              your unique challenges and vision, delivering solutions that empower your organization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= About ======= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">About us</span>
+          <h2>Your gateway to technological excellence</h2>
+          <p>Choosing the right technology partner is crucial for the success of your business. With deep expertise in
+            healthcare technology, we bring proven experience to every project.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="reveal">
+            <h3>Innovative Cloud &amp; Mobile Solutions</h3>
+            <p>Devyuga Software Solutions is your trusted partner for cutting-edge cloud and mobile app development in
+              Calgary. Our expert team crafts tailored software solutions that drive growth, efficiency, and
+              competitive advantage for businesses across North America, with particular expertise in healthcare
+              technology.</p>
+            <p>Leveraging the latest cloud and mobile technologies, we create future-proof, scalable solutions that
+              meet your unique needs. From startups to enterprises, we work closely with you to unlock your business's
+              full potential.</p>
+            <ul class="checklist">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Cutting-edge cloud and mobile solutions that redefine scalability and performance.
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Expertise in emerging technologies like AI, machine learning, and specialized industry solutions.
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Future-proof and adaptable solutions that evolve with changing market dynamics.
+              </li>
             </ul>
           </div>
 
-          <div class="row gy-4 portfolio-container">
-
-            <div class="col-xl-6 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/app1.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Ectopanel - Promo Website for a Mobile App.</a></h4>
-                  <p>Ectopanel is an advanced app for electricity tracking and management, with a user-friendly interface for surplus enerdy sales.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-6 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/app3.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Appset - Branding for the Application Developer's Company</a></h4>
-                  <p>Appsent specializes in end-to-end mobile application development.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-6 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/app4.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Cracker - Cyber Security Web Application</a></h4>
-                  <p>Cracker is an advanced Web Application designed to provide user with a safe and reliable payment solution for online purchases.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-6 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/app1.jpg" class="img-fluid" alt=""></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Keap - Family Budgeting Mobile App</a></h4>
-                  <p>Keap specializes in financial management for the user's convenience.</p>
-                </div>
-              </div>
-            </div>
+          <div class="reveal">
+            <p>At <strong>Devyuga</strong>, we turn bold ideas into powerful <strong>web applications</strong>,
+              high-performing <strong>mobile apps</strong>, and scalable <strong>cloud solutions</strong> that
+              accelerate business growth and maximize efficiency. Our expert team of <strong>software
+                developers</strong> and creative <strong>UI/UX designers</strong> blends technical mastery with a deep
+              understanding of your business needs to deliver solutions that truly make an impact.</p>
+            <p>What makes us different? Our <strong>collaborative mindset</strong> and <strong>agile development
+                process</strong>. From brainstorming to launch, we partner with you at every stage, ensuring seamless
+              integration with your workflows, transparent communication, and faster go-to-market delivery.</p>
+            <p>Backed by a proven track record across industries including healthcare, we specialize in building
+              <strong>intuitive, user-friendly, and future-ready software solutions</strong> that consistently exceed
+              expectations. <strong>Bring your vision to life with Devyuga</strong> &mdash; let's build something
+              extraordinary together.</p>
           </div>
-          
-
         </div>
       </div>
     </section>
-    
-    <!-End Portfolio Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <!-- <section id="pricing" class="pricing sections-bg position-relative">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Awards & Recognition</h2>
-          <p>Discover Devyuga's accolades, a testament to our commitment to excellence in innovation and technology solutions.Trust in our proven track record of success, endorsed by industry leaders and esteemed organizations.</p>
-        </div>
-
-        <div class="row g-4 py-lg-5" data-aos="zoom-out" data-aos-delay="100">
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>$16M+ Investment Raised</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="pricing-item featured">
-              <h3>4.9 Average Rating on the PlayStore</h3>
-              <div class="icon">
-                <i class="bi bi-airplane"></i>
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>5.0 Rating on Clutch</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Pricing Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
+    <!-- ======= Team ======= -->
+    <section id="team" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Who you'll work with</span>
           <h2>Core Team</h2>
         </div>
 
-        <div class="row gy-4 justify-content-center">
-
-          <!-- Member 1 -->
-          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <div class="member-content">
-                <div class="member-info">
-                  <div class="member-img">
-                    <img src="assets/img/team/ash_prof.jpg"  alt="Ash Singla">
-                  </div>
-                  <div class="member-details">
-                    <div class="member-header">
-                      <h4>Ash Singla</h4>
-                      <div class="member-social">
-                        <a href="https://www.linkedin.com/in/ashsingla227/" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                        <a href="mailto:ash.singla@devyuga.com"><i class="bi bi-envelope"></i></a>
-                      </div>
-                    </div>
-                    <span>CEO | Software Developer</span>
-                    <p>
-                      Visionary tech leader driving Devyuga's growth with cutting-edge cloud, AI, and scalable
-                      solutions. Passionate about building sustainable technology that makes real impact.
-                    </p>
-                  </div>
-                </div>
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <img src="assets/img/team/ash_prof.jpg" alt="Ash Singla" width="84" height="84" loading="lazy">
+            <div>
+              <h3>Ash Singla</h3>
+              <span class="team-role">CEO | Software Developer</span>
+              <p>Visionary tech leader driving Devyuga's growth with cutting-edge cloud, AI, and scalable solutions.
+                Passionate about building sustainable technology that makes real impact.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/ashsingla227/" target="_blank" rel="noopener"
+                  aria-label="Ash Singla on LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                  </svg>
+                </a>
+                <a href="mailto:ash.singla@devyuga.com" aria-label="Email Ash Singla">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-10 6L2 7" />
+                  </svg>
+                </a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="member">
-              <div class="member-content">
-                <div class="member-info">
-                  <div class="member-img">
-                    <img src="assets/img/team/ishu.jpeg" alt="Ishu Bansal">
-                  </div>
-                  <div class="member-details">
-                    <div class="member-header">
-                      <h4>Ishu Bansal</h4>
-                      <div class="member-social">
-                        <a href="https://linkedin.com/in/ishu9bansal/" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                        <a href="mailto:ishu.bansal@devyuga.com"><i class="bi bi-envelope"></i></a>
-                      </div>
-                    </div>
-                    <span>Lead Software Architect</span>
-                    <p>
-                      Architecting the backbone of Devyuga's technology with scalable, high-performance systems.
-                      Transforms complex problems into simple, powerful solutions.
-                    </p>
-                  </div>
-                </div>
+          <article class="team-card reveal">
+            <img src="assets/img/team/harini.png" alt="Harini Singla" width="84" height="84" loading="lazy">
+            <div>
+              <h3>Harini Singla</h3>
+              <span class="team-role">Lead Product Designer</span>
+              <p>Design innovator shaping seamless, user-first experiences at Devyuga. Blends creativity and data to
+                craft products people love to use.</p>
+              <div class="team-links">
+                <a href="https://linkedin.com/in/harinisingla" target="_blank" rel="noopener"
+                  aria-label="Harini Singla on LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                  </svg>
+                </a>
+                <a href="mailto:harini.singla@devyuga.com" aria-label="Email Harini Singla">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-10 6L2 7" />
+                  </svg>
+                </a>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="member">
-              <div class="member-content">
-                <div class="member-info">
-                  <div class="member-img">
-                    <img src="assets/img/team/patil.jpeg" alt="Gaurav Patil">
-                  </div>
-                  <div class="member-details">
-                    <div class="member-header">
-                      <h4>Gaurav Patil</h4>
-                      <div class="member-social">
-                        <a href="https://www.linkedin.com/in/gaurav-patil-iitr/" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                        <a href="mailto:gaurav.patil@devyuga.com"><i class="bi bi-envelope"></i></a>
-                      </div>
-                    </div>
-                    <span>Commercial Lead</span>
-                    <p>
-                      Driving Devyuga’s commercial strategy with clarity and precision. 
-                      Turns market insights into actionable plans that unlock growth and long-term value.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-content">
-                <div class="member-info">
-                  <div class="member-img">
-                    <img src="assets/img/team/harini.png" alt="Harini Singla">
-                  </div>
-                  <div class="member-details">
-                    <div class="member-header">
-                      <h4>Harini Singla</h4>
-                      <div class="member-social">
-                        <a href="https://linkedin.com/in/harinisingla" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                        <a href="mailto:harini.singla@devyuga.com"><i class="bi bi-envelope"></i></a>
-                      </div>
-                    </div>
-                    <span>Lead Product Designer</span>
-                    <p>
-                      Design innovator shaping seamless, user-first experiences at Devyuga. Blends creativity and data
-                      to craft products people love to use.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          </article>
         </div>
-
       </div>
     </section>
-    <!-- End Team Section --><!-- End Team Section -->
 
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="blog" class="recent-posts sections-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Recent Blog Posts: Insights from Devyuga's Software Experts</h2>
-          <p>
-            Explore our latest blog posts showcasing Devyuga's expertise in cutting-edge software development, cloud
-            solutions, and emerging technologies. Our team of experienced professionals shares valuable insights, best
-            practices, and industry trends to help you stay ahead in the ever-evolving tech landscape.
-          </p>
+    <!-- ======= Blog ======= -->
+    <section id="blog" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Insights</span>
+          <h2>Recent blog posts from Devyuga's software experts</h2>
+          <p>Valuable insights, best practices, and industry trends to help you stay ahead in the ever-evolving tech
+            landscape.</p>
         </div>
 
-        <div id="medium-posts" class="row gy-4">
-          <div class="col-xl-4 col-md-6">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:0/1*-eUIHg_n7L-niOk7Hhg4Ag.png" alt="Understanding AI Systems: The Beginner Mistakes Everyone Makes with LLMs and Chatbots">
-              </div>
+        <div id="medium-posts" class="blog-grid">
+          <article class="post-card reveal">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:0/1*-eUIHg_n7L-niOk7Hhg4Ag.png"
+                alt="Understanding AI Systems: The Beginner Mistakes Everyone Makes with LLMs and Chatbots"
+                loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Software Best Practices</p>
+              <h3><a
+                  href="https://medium.com/@ishubansal1400/understanding-ai-systems-the-beginner-mistakes-everyone-makes-with-llms-and-chatbots-440f9453aa5d"
+                  target="_blank" rel="noopener">Understanding AI Systems: The Beginner Mistakes Everyone Makes with
+                  LLMs and Chatbots</a></h3>
+              <p class="post-excerpt">Understanding AI Systems: A Beginner's Guide to LLMs, Chatbots, and the Mistakes
+                We All Make. Artificial Intelligence is everywhere today; inside apps, tools, workflows, and even
+                memes.</p>
+              <p class="post-date"><time datetime="2025-11-26">Nov 26, 2025</time></p>
+            </div>
+          </article>
 
-              <p class="post-category">Technology - Software Bestpractices</p>
+          <article class="post-card reveal">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:0/1*smrZQzvegR9F8w_1gyVHQQ.png"
+                alt="Why Good Engineers Write Scopes Before Code" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Software Best Practices</p>
+              <h3><a href="https://medium.com/@ishubansal1400/why-good-engineers-write-scopes-before-code-1edad6f400cb"
+                  target="_blank" rel="noopener">Why Good Engineers Write Scopes Before Code</a></h3>
+              <p class="post-excerpt">From Chaos to Clarity: How Defining Scope Saved the Project. In the last part of
+                this blog, we explored how not defining the scope of a feature led to messy outcomes and rework.</p>
+              <p class="post-date"><time datetime="2025-10-10">Oct 10, 2025</time></p>
+            </div>
+          </article>
 
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/understanding-ai-systems-the-beginner-mistakes-everyone-makes-with-llms-and-chatbots-440f9453aa5d">
-                  Understanding AI Systems: The Beginner Mistakes Everyone Makes with LLMs and Chatbots
-                </a>
-              </h2>
+          <article class="post-card reveal">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:0/1*vhVKUDDJOXwtUamqt2Px6w.png"
+                alt="Why Defining Scope Saves Projects (and Sanity)" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Software Best Practices</p>
+              <h3><a href="https://medium.com/@ishubansal1400/why-defining-scope-saves-projects-and-sanity-2da56206dda0"
+                  target="_blank" rel="noopener">Why Defining Scope Saves Projects (and Sanity)</a></h3>
+              <p class="post-excerpt">Define the Scope or Drown in Endless Tweaks. How one highlight component taught me
+                the hard way about perfectionism, timelines, and engineering communication.</p>
+              <p class="post-date"><time datetime="2025-10-01">Oct 1, 2025</time></p>
+            </div>
+          </article>
 
-              <p class="post-overview">
-                Understanding AI Systems: A Beginner’s Guide to LLMs, Chatbots, and the Mistakes We All Make Artificial Intelligence is everywhere today; inside apps, tools, workflows, and even memes. But for new …
-              </p>
+          <article class="post-card reveal">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*NN8GSEbtkDYGIhMMnT0TPA.png"
+                alt="The Modular API Handler Pattern: Scalable Frontend Service Calls" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Frontend</p>
+              <h3><a
+                  href="https://medium.com/@ishubansal1400/the-modular-api-handler-pattern-scalable-frontend-service-calls-79dee191c273"
+                  target="_blank" rel="noopener">The Modular API Handler Pattern: Scalable Frontend Service Calls</a>
+              </h3>
+              <p class="post-excerpt">Stop breaking your frontend every time the backend changes. Learn how a modular
+                API handler acts as a firewall.</p>
+              <p class="post-date"><time datetime="2025-09-19">Sep 19, 2025</time></p>
+            </div>
+          </article>
 
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-11-26">Wed Nov 26 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <article>        
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:0/1*smrZQzvegR9F8w_1gyVHQQ.png" alt="Why Good Engineers Write Scopes Before Code">
-              </div>
+          <article class="post-card reveal">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*ex7F_XjbqgJRh9-6sxHUtg.png"
+                alt="Building Trustworthy Software" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Software Best Practices</p>
+              <h3><a href="https://medium.com/@ishubansal1400/building-trustworthy-software-2f8c6674273a"
+                  target="_blank" rel="noopener">Building Trustworthy Software</a></h3>
+              <p class="post-excerpt">Lessons on Authentication, Error Handling, and Ambiguity.</p>
+              <p class="post-date"><time datetime="2025-09-12">Sep 12, 2025</time></p>
+            </div>
+          </article>
 
-              <p class="post-category">Technology - Software Bestpractices</p>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*P0BF8CoqFBhP5cp3QIfUCw.png"
+                alt="The Subtle Pitfalls of React State Management" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Frontend</p>
+              <h3><a
+                  href="https://medium.com/@ishubansal1400/the-subtle-pitfalls-of-react-state-management-b1185c46ce15"
+                  target="_blank" rel="noopener">The Subtle Pitfalls of React State Management</a></h3>
+              <p class="post-excerpt">Real-world bugs you've probably hit &mdash; and how Redux keeps you safe.</p>
+              <p class="post-date"><time datetime="2025-08-27">Aug 27, 2025</time></p>
+            </div>
+          </article>
 
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/why-good-engineers-write-scopes-before-code-1edad6f400cb">
-                  Why Good Engineers Write Scopes Before Code
-                </a>
-              </h2>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1021/1*WYPwKkgvO4LgPqOqigUF_g.png"
+                alt="React is declarative? How to think in React?" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Frontend</p>
+              <h3><a href="https://medium.com/@ishubansal1400/react-is-declarative-how-to-think-in-react-194869b1493e"
+                  target="_blank" rel="noopener">React is declarative? How to think in React?</a></h3>
+              <p class="post-excerpt">People often say that state is central to React development &mdash; but what they
+                don't explain is why it's so important.</p>
+              <p class="post-date"><time datetime="2025-08-20">Aug 20, 2025</time></p>
+            </div>
+          </article>
 
-              <p class="post-overview">
-               From Chaos to Clarity: How Defining Scope Saved the Project In the last part of this blog, we explored how not defining the scope of a feature led to messy outcomes, rework, and misaligned …
-              </p>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1024/1*cmth5f5iQXz7gamh4l3XLA.png"
+                alt="Stop Misusing React and Redux: A Call for Thoughtful Frontend Development" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Frontend</p>
+              <h3><a
+                  href="https://medium.com/@ishubansal1400/stop-misusing-react-and-redux-a-call-for-thoughtful-frontend-development-d12fe7744ff1"
+                  target="_blank" rel="noopener">Stop Misusing React and Redux: A Call for Thoughtful Frontend
+                  Development</a></h3>
+              <p class="post-excerpt">"React is declarative. Redux is predictable. So why are our codebases still a
+                mess?"</p>
+              <p class="post-date"><time datetime="2025-07-14">Jul 14, 2025</time></p>
+            </div>
+          </article>
 
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-10-10">Fri Oct 10 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:0/1*vhVKUDDJOXwtUamqt2Px6w.png" alt="Why Defining Scope Saves Projects (and Sanity)">
-              </div>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*FKiE4ER9G7zfkLcpMVKqjA.png" alt="OpenID and OAuth"
+                loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Authentication</p>
+              <h3><a href="https://medium.com/@KumarHalder/openid-and-oauth-ff4d9347dd5f" target="_blank"
+                  rel="noopener">OpenID and OAuth</a></h3>
+              <p class="post-excerpt">OpenID and OAuth are related but distinct protocols that serve different purposes
+                in the realm of identity and access management.</p>
+              <p class="post-date"><time datetime="2024-03-07">Mar 7, 2024</time></p>
+            </div>
+          </article>
 
-              <p class="post-category">Technology - Software Bestpractices</p>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*xxRg-pan7tDond392GSV7Q.png"
+                alt="Token Based Authentication in Web Applications" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Authentication</p>
+              <h3><a href="https://medium.com/@KumarHalder/token-based-authentication-in-web-applications-794d97056910"
+                  target="_blank" rel="noopener">Token Based Authentication in Web Applications</a></h3>
+              <p class="post-excerpt">Token-based authentication is a common approach for securing web applications and
+                APIs. It involves the use of tokens.</p>
+              <p class="post-date"><time datetime="2024-03-05">Mar 5, 2024</time></p>
+            </div>
+          </article>
 
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/why-defining-scope-saves-projects-and-sanity-2da56206dda0">
-                  Why Defining Scope Saves Projects (and Sanity)
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Define the Scope or Drown in Endless Tweaks How one highlight component taught me the hard way about perfectionism, timelines, and engineering communication Let me tell you a story that’s as much …
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-10-01">Wed Oct 1 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*NN8GSEbtkDYGIhMMnT0TPA.png" alt="The Modular API Handler Pattern: Scalable Frontend Service Calls">
-              </div>
-
-              <p class="post-category">Technology - Frontend</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/the-modular-api-handler-pattern-scalable-frontend-service-calls-79dee191c273">
-                  The Modular API Handler Pattern: Scalable Frontend Service Calls
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Stop breaking your frontend every time the backend changes. Learn how a modular API handler acts as a firewall.
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-09-19">Fri Sep 19 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6">
-            <article>        
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*ex7F_XjbqgJRh9-6sxHUtg.png" alt="Building Trustworthy Software">
-              </div>
-
-              <p class="post-category">Technology - Software Bestpractices</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/building-trustworthy-software-2f8c6674273a">
-                  Building Trustworthy Software
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Lessons on Authentication, Error Handling, and Ambiguity
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-09-12">Fri Sep 12 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Load All CTA Placeholder -->
-          <div class="col-xl-4 col-md-6" id="load-all-cta">
-            <article class="load-all-placeholder">
-              <div class="post-img skeleton-img">
-              </div>
-              <p class="post-category skeleton-text"></p>
-              <h2 class="title">
-                <a href="#" id="load-all-btn" class="load-all-link">
-                  Load All Blog Posts →
-                </a>
-              </h2>
-              <p class="post-overview skeleton-content"></p>
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date skeleton-text"></p>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Hidden blog posts (6-12) -->
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*P0BF8CoqFBhP5cp3QIfUCw.png" alt="The Subtle Pitfalls of React State Management">
-              </div>
-
-              <p class="post-category">Technology - Frontend</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/the-subtle-pitfalls-of-react-state-management-b1185c46ce15">
-                  The Subtle Pitfalls of React State Management
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Real-world bugs you’ve probably hit — and how Redux keeps you safe.
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-08-27">Wed Aug 27 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1021/1*WYPwKkgvO4LgPqOqigUF_g.png" alt="🚀 React is declarative? 🤔 How to think in React?">
-              </div>
-
-              <p class="post-category">Technology - Frontend</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/react-is-declarative-how-to-think-in-react-194869b1493e">
-                  🚀 React is declarative? 🤔 How to think in React?
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                People often say that state is central to React development — but what they don’t explain is why it’s so important. React was made to solve
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-08-20">Wed Aug 20 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1024/1*cmth5f5iQXz7gamh4l3XLA.png" alt="🚨 Stop Misusing React and Redux: A Call for Thoughtful Frontend Development">
-              </div>
-
-              <p class="post-category">Technology - Frontend</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@ishubansal1400/stop-misusing-react-and-redux-a-call-for-thoughtful-frontend-development-d12fe7744ff1">
-                  🚨 Stop Misusing React and Redux: A Call for Thoughtful Frontend Development
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                “React is declarative. Redux is predictable. So why are our codebases still a mess?”
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2025-07-14">Mon Jul 14 2025</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*FKiE4ER9G7zfkLcpMVKqjA.png" alt="OpenID and OAuth">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/openid-and-oauth-ff4d9347dd5f">
-                  OpenID and OAuth
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                OpenID and OAuth are related but distinct protocols that serve different purposes in the realm of identity and access management. Both are…
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-07">Thu Mar 07 2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*xxRg-pan7tDond392GSV7Q.png" alt="Token Based Authentication in Web Applications">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/token-based-authentication-in-web-applications-794d97056910">
-                  Token Based Authentication in Web Applications
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Token-based authentication is a common approach for securing web applications and APIs. It involves the use of tokens, which are typically…
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-05">Tue Mar 05 2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl-4 col-md-6 hidden-blog" style="display: none;">
-            <article>
-              <div class="post-img">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*4kY3h2c-sJO3sU-Rh9Z1HA.png" alt="Session Based Authentication (Cookie)">
-              </div>
-
-              <p class="post-category">Technology - Authentication</p>
-
-              <h2 class="title">
-                <a href="https://medium.com/@KumarHalder/session-based-authentication-cookie-06a5f84c4c6b">
-                  Session Based Authentication (Cookie)
-                </a>
-              </h2>
-
-              <p class="post-overview">
-                Session-based authentication involves the use of sessions to authenticate and authorize users in a web application. Some advantages are…
-              </p>
-
-              <div class="d-flex align-items-center">
-                <div class="post-meta">
-                  <p class="post-date">
-                    <time datetime="2024-03-02">Sat Mar 02 2024</time>
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
+          <article class="post-card hidden-blog">
+            <div class="post-img">
+              <img src="https://miro.medium.com/v2/resize:fit:1200/1*4kY3h2c-sJO3sU-Rh9Z1HA.png"
+                alt="Session Based Authentication (Cookie)" loading="lazy">
+            </div>
+            <div class="post-body">
+              <p class="post-category">Technology &middot; Authentication</p>
+              <h3><a href="https://medium.com/@KumarHalder/session-based-authentication-cookie-06a5f84c4c6b"
+                  target="_blank" rel="noopener">Session Based Authentication (Cookie)</a></h3>
+              <p class="post-excerpt">Session-based authentication involves the use of sessions to authenticate and
+                authorize users in a web application.</p>
+              <p class="post-date"><time datetime="2024-03-02">Mar 2, 2024</time></p>
+            </div>
+          </article>
         </div>
 
+        <div class="blog-more reveal">
+          <button id="load-all-btn" type="button" class="btn btn-outline">
+            Load all blog posts
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
-    <!-- End Recent Blog Posts Section -->
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container" data-aos="fade-up">
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="content px-xl-5">
-              <h3>Frequently Asked <strong>Questions</strong></h3>
-              <p>
-                Get quick answers to common queries and questions about Devyuga.
-              </p>
-            </div>
+    <!-- ======= FAQ ======= -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <div class="faq-wrap">
+          <div class="reveal">
+            <span class="section-eyebrow">FAQ</span>
+            <h2 style="font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 12px;">Frequently
+              asked questions</h2>
+            <p>Get quick answers to common queries and questions about Devyuga.</p>
           </div>
 
-          <div class="col-lg-8">
-
-            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faq-content-1">
-                    <span class="num">1.</span>
-                    How do I get started with Devyuga's Services?
-                  </button>
-                </h3>
-                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    <ol>
-                      <li>Reach out to our team to discuss your software needs.</li>
-                      <li>We'll work closely with you to understand your requirements and challenges.</li>
-                      <li>Together, we'll develop a tailored solution that meets your unique business goals.</li>
-                    </ol>
-                    Our client-centric approach ensures we deliver innovative, high-quality software that drives
-                    tangible results for your organization.
-
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faq-content-2">
-                    <span class="num">2.</span>
-                    How long does it take to complete a project?
-                  </button>
-                </h3>
-                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    At Devyuga, we typically complete projects in 8-16 weeks, depending on complexity. After an initial
-                    4-week requirement gathering phase, we provide a detailed timeline estimate tailored to your
-                    specific project needs.
-                    Our goal is to deliver high-quality solutions that meet your business objectives. We work closely
-                    with you to ensure the timeline is realistic and achievable.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faq-content-3">
-                    <span class="num">3.</span>
-                    What is your project model?
-                  </button>
-                </h3>
-                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    We follow an Agile methodology to deliver software solutions. Our process starts with building an
-                    MVP, keeping you closely involved throughout.<br /><br />
-                    We propose multiple tiers for the proposed system, giving you flexibility on timeline and budget.
-                    This collaborative, iterative approach allows us to
-                    quickly validate concepts, gather feedback, and build the final solution to align with your business
-                    objectives.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faq-content-4">
-                    <span class="num">4.</span>
-                    What industries do you specialize in?
-                  </button>
-                </h3>
-                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    We have expertise across a wide range of industries and solutions, with a special focus on healthcare:
-                    <ul>
-                      <li>Healthcare Technology (Patient Management, Clinical Workflows, HIPAA-Compliant Systems)</li>
-                      <li>MVP Development</li>
-                      <li>Cloud DevOps</li>
-                      <li>Data Science and Engineering</li>
-                      <li>Mobile Apps</li>
-                    </ul>
-                    Our team works with both large corporations and small startups, delivering scalable solutions
-                    tailored to your unique business needs across all industries.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Contact us</h2>
-          <p>Get Connected with us and let us build your custom software solution.</p>
-        </div>
-
-        <div class="row gx-lg-0 gy-4">
-
-          <div class="col-lg-4">
-
-            <div class="info-container d-flex flex-column align-items-center justify-content-center">
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>Calgary, AB, Canada</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>info@devyuga.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <!-- <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div> -->
-              <!-- End Info Item -->
-
-              <!-- <div class="info-item d-flex">
-                <i class="bi bi-clock flex-shrink-0"></i>
-                <div>
-                  <h4>Open Hours:</h4>
-                  <p>Mon-Sat: 11AM - 23PM</p>
-                </div>
-              </div> -->
-              <!-- End Info Item -->
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form id="contact-form" class="php-email-form" novalidate>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
+          <div class="faq-list">
+            <details class="faq-item reveal">
+              <summary>
+                How do I get started with Devyuga's services?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <ol>
+                  <li>Reach out to our team to discuss your software needs.</li>
+                  <li>We'll work closely with you to understand your requirements and challenges.</li>
+                  <li>Together, we'll develop a tailored solution that meets your unique business goals.</li>
+                </ol>
+                Our client-centric approach ensures we deliver innovative, high-quality software that drives tangible
+                results for your organization.
               </div>
-              <div class="form-group mt-3">
-                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                How long does it take to complete a project?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                At Devyuga, we typically complete projects in 8-16 weeks, depending on complexity. After an initial
+                4-week requirement gathering phase, we provide a detailed timeline estimate tailored to your specific
+                project needs. Our goal is to deliver high-quality solutions that meet your business objectives. We
+                work closely with you to ensure the timeline is realistic and achievable.
               </div>
-              <div class="form-group mt-3">
-                <textarea name="message" class="form-control" rows="7" placeholder="Message" required></textarea>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                What is your project model?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                We follow an Agile methodology to deliver software solutions. Our process starts with building an MVP,
+                keeping you closely involved throughout. We propose multiple tiers for the proposed system, giving you
+                flexibility on timeline and budget. This collaborative, iterative approach allows us to quickly
+                validate concepts, gather feedback, and build the final solution to align with your business
+                objectives.
               </div>
-              <!-- Honeypot field - hidden from users but visible to bots -->
-              <input type="text" name="website" class="honeypot-field" tabindex="-1" autocomplete="off">
-              <input type="hidden" name="form_load_time" id="form_load_time">
-              <div class="my-3">
-                <div class="loading" style="display:none;">Loading...</div>
-                <div class="error-message" style="display:none; color:red;"></div>
-                <div class="sent-message" style="display:none; color:white;">Your message has been sent. Thank you!</div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                What industries do you specialize in?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                We have expertise across a wide range of industries and solutions, with a special focus on healthcare:
+                <ul>
+                  <li>Healthcare Technology (Patient Management, Clinical Workflows, HIPAA-Compliant Systems)</li>
+                  <li>MVP Development</li>
+                  <li>Cloud DevOps</li>
+                  <li>Data Science and Engineering</li>
+                  <li>Mobile Apps</li>
+                </ul>
+                Our team works with both large corporations and small startups, delivering scalable solutions tailored
+                to your unique business needs across all industries.
               </div>
-              <div class="text-center">
-                <button type="submit">Send Message</button>
-              </div>
-            </form>
+            </details>
           </div>
         </div>
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
+    <!-- ======= Contact ======= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Contact us</span>
+          <h2>Let's build your custom software solution</h2>
+          <p>Tell us about your project and we'll get back to you within one business day.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-info reveal">
+            <div class="contact-item">
+              <span class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div>
+                <h3>Location</h3>
+                <p>Calgary, AB, Canada</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 6L2 7" />
+                </svg>
+              </span>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:info@devyuga.com">info@devyuga.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item contact-card-cta">
+              <div>
+                <h3>Prefer to talk it through?</h3>
+                <p>Book a free 30-minute discovery call with our team.</p>
+                <a href="#" onclick="openCalendlyModal(event)" class="btn btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                    <path d="m9 16 2 2 4-4" />
+                  </svg>
+                  Book a Call
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form reveal" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">Your Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="from_name" class="form-control" placeholder="Jane Smith"
+                  autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Your Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="cf-email" name="email" class="form-control" placeholder="jane@company.com"
+                  autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="cf-subject" name="subject" class="form-control"
+                placeholder="What can we help you build?" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="cf-message" name="message" class="form-control" rows="7"
+                placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+            </div>
+            <!-- Honeypot field - hidden from users but visible to bots -->
+            <input type="text" name="website" class="honeypot-field" tabindex="-1" autocomplete="off"
+              aria-hidden="true">
+            <input type="hidden" name="form_load_time" id="form_load_time">
+            <div class="form-status" aria-live="polite">
+              <div class="loading">Sending your message&hellip;</div>
+              <div class="error-message" role="alert"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
+  <footer class="site-footer">
     <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Devyuga</span>
-          </a>
-          <p>Empowering Businesses with Innovative Software Solutions.</p>
-          <div class="social-links d-flex mt-4">
-
-            <a href="https://www.instagram.com/devyuga_inc/" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/devyuga/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">Devyuga</a>
+          <p>Empowering businesses with innovative software solutions.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/devyuga_inc/" target="_blank" rel="noopener"
+              aria-label="Devyuga on Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/devyuga/" target="_blank" rel="noopener"
+              aria-label="Devyuga on LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
+        <nav class="footer-links" aria-label="Useful links">
+          <h4>Company</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/portfolio/">Our Work</a></li>
+            <li><a href="/compliance/">Security &amp; Compliance</a></li>
             <li><a href="/terms">Terms of Service</a></li>
             <li><a href="/privacy">Privacy Policy</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="col-lg-2 col-6 footer-links">
+        <nav class="footer-links" aria-label="Our services">
           <h4>Our Services</h4>
           <ul>
             <li><a href="#services">Cloud Solutions</a></li>
             <li><a href="#services">Mobile App Development</a></li>
             <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">AI &amp; Machine Learning</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <div class="footer-contact">
           <h4>Contact Us</h4>
-          <p>
-
-            <strong>Email:</strong> info@devyuga.com<br>
-          </p>
-
+          <p><strong>Email:</strong> <a href="mailto:info@devyuga.com">info@devyuga.com</a></p>
+          <p>Calgary, AB, Canada</p>
         </div>
+      </div>
 
+      <div class="footer-bottom">
+        &copy; Copyright <strong>Devyuga</strong>. All Rights Reserved
       </div>
     </div>
+  </footer>
 
-    <div class="container mt-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Devyuga</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-      </div>
-    </div>
-
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
+  <a href="#" class="scroll-top" aria-label="Scroll to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg>
+  </a>
 
   <!-- Calendly Modal -->
-  <div id="calendly-modal" class="calendly-modal" style="display: none;">
+  <div id="calendly-modal" class="calendly-modal" role="dialog" aria-modal="true" aria-label="Book a discovery call">
     <div class="calendly-modal-overlay" onclick="closeCalendlyModal()"></div>
     <div class="calendly-modal-content">
-      <button class="calendly-modal-close" onclick="closeCalendlyModal()">&times;</button>
-      <iframe id="calendly-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+      <button class="calendly-modal-close" onclick="closeCalendlyModal()" aria-label="Close booking dialog">&times;</button>
+      <iframe id="calendly-iframe" src="" title="Calendly scheduling" width="100%" height="100%"></iframe>
     </div>
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-  <script>
-    // Calendly Modal Functions
-    function openCalendlyModal(event) {
-      event.preventDefault();
-      const modal = document.getElementById('calendly-modal');
-      const iframe = document.getElementById('calendly-iframe');
-      iframe.src = 'https://calendly.com/ash-singla-devyuga/meet';
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCalendlyModal() {
-      const modal = document.getElementById('calendly-modal');
-      const iframe = document.getElementById('calendly-iframe');
-      modal.style.display = 'none';
-      iframe.src = '';
-      document.body.style.overflow = '';
-    }
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeCalendlyModal();
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // Initialize EmailJS
-      emailjs.init("sfdbCxS2BHHEmelZO");
-
-      const form = document.getElementById("contact-form");
-      const loading = form.querySelector(".loading");
-      const errorMessage = form.querySelector(".error-message");
-      const sentMessage = form.querySelector(".sent-message");
-
-      // Record form load time for time-based validation
-      const formLoadTime = Date.now();
-      document.getElementById("form_load_time").value = formLoadTime;
-
-      // Spam detection helper functions
-      function isValidEmail(email) {
-        // Advanced email validation
-        const emailPattern = /^[a-zA-Z0-9]([a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+$/;
-
-        // Check basic pattern
-        if (!emailPattern.test(email)) {
-          return false;
-        }
-
-        // Check for common disposable/temporary email domains
-        const disposableDomains = [
-          'tempmail', 'throwaway', 'guerrillamail', '10minutemail', 'mailinator',
-          'trashmail', 'fakeinbox', 'yopmail', 'maildrop', 'getnada', 'temp-mail',
-          'sharklasers', 'guerrillamailblock', 'spam4', 'grr.la', 'mailnesia',
-          'discard.email', 'discardmail', 'mintemail', 'emailondeck'
-        ];
-
-        const emailLower = email.toLowerCase();
-        if (disposableDomains.some(domain => emailLower.includes(domain))) {
-          return false;
-        }
-
-        // Check for suspicious patterns
-        if (email.split('@')[0].length < 2) { // Username too short
-          return false;
-        }
-
-        // Check for excessive dots or special characters
-        if ((email.match(/\./g) || []).length > 5) {
-          return false;
-        }
-
-        return true;
-      }
-
-      function containsSpamKeywords(text) {
-        const spamKeywords = [
-          // Pharmaceutical spam
-          /viagra/gi, /cialis/gi, /pharmacy/gi, /prescription/gi, /pills/gi,
-          // Gambling
-          /casino/gi, /poker/gi, /betting/gi, /lottery/gi, /jackpot/gi,
-          // Financial scams
-          /winner/gi, /prize/gi, /won.*\$/gi, /claim.*prize/gi, /inheritance/gi,
-          /cryptocurrency/gi, /crypto/gi, /bitcoin/gi, /forex/gi, /trading/gi,
-          /investment opportunity/gi, /guaranteed.*return/gi, /double.*money/gi,
-          // Work from home scams
-          /make money/gi, /work from home/gi, /free money/gi, /earn.*daily/gi,
-          /passive income/gi, /get rich/gi, /financial freedom/gi,
-          // Generic spam
-          /click here/gi, /buy now/gi, /limited time/gi, /act now/gi,
-          /order now/gi, /call now/gi, /hurry/gi, /urgent/gi,
-          /congratulations!/gi, /you've been selected/gi, /exclusive offer/gi,
-          // SEO spam
-          /seo service/gi, /increase traffic/gi, /boost ranking/gi,
-          /backlinks/gi, /website optimization/gi,
-          // Loan/credit spam
-          /loan approved/gi, /credit score/gi, /debt relief/gi, /refinance/gi,
-          // Adult content
-          /adult/gi, /dating/gi, /hookup/gi, /singles/gi,
-          // Common spam phrases
-          /unsubscribe/gi, /opt-out/gi, /remove.*list/gi,
-          /please verify/gi, /confirm.*account/gi, /suspended.*account/gi
-        ];
-        return spamKeywords.some(keyword => keyword.test(text));
-      }
-
-      function hasExcessiveLinks(text) {
-        const urlPattern = /(https?:\/\/[^\s]+)|(\b\w+\.(com|net|org|io|co|biz|info)\b)/gi;
-        const matches = text.match(urlPattern) || [];
-        return matches.length > 1; // Reduced to max 1 link
-      }
-
-      function hasRepeatedChars(text) {
-        // Check for repeated characters (more strict)
-        return /(.)\1{5,}/.test(text);
-      }
-
-      function hasSuspiciousPattern(text) {
-        // Check for all caps (more than 50% of text)
-        const capsCount = (text.match(/[A-Z]/g) || []).length;
-        const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
-        if (letterCount > 0 && (capsCount / letterCount) > 0.5) {
-          return true;
-        }
-
-        // Check for excessive special characters
-        const specialChars = (text.match(/[!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/g) || []).length;
-        if (specialChars > text.length * 0.2) { // More than 20% special chars
-          return true;
-        }
-
-        // Check for excessive numbers
-        const numbers = (text.match(/\d/g) || []).length;
-        if (numbers > text.length * 0.3) { // More than 30% numbers
-          return true;
-        }
-
-        return false;
-      }
-
-      function isRateLimited() {
-        const lastSubmission = localStorage.getItem('lastFormSubmission');
-        if (lastSubmission) {
-          const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission);
-          const cooldownPeriod = 180000; // 3 minutes (increased from 1 minute)
-          return timeSinceLastSubmission < cooldownPeriod;
-        }
-        return false;
-      }
-
-      function getSubmissionCount() {
-        const today = new Date().toDateString();
-        const submissionData = localStorage.getItem('formSubmissionData');
-
-        if (submissionData) {
-          const data = JSON.parse(submissionData);
-          if (data.date === today) {
-            return data.count;
-          }
-        }
-        return 0;
-      }
-
-      function updateSubmissionCount() {
-        const today = new Date().toDateString();
-        localStorage.setItem('formSubmissionData', JSON.stringify({
-          date: today,
-          count: getSubmissionCount() + 1
-        }));
-      }
-
-      function validateForm() {
-        const honeypot = form.querySelector("input[name='website']").value;
-        const name = form.querySelector("input[name='from_name']").value;
-        const email = form.querySelector("input[name='email']").value;
-        const subject = form.querySelector("input[name='subject']").value;
-        const message = form.querySelector("textarea[name='message']").value;
-
-        // Check honeypot
-        if (honeypot) {
-          console.warn("Honeypot triggered");
-          return { valid: false, error: "Please try again." };
-        }
-
-        // Check time-based validation (minimum 5 seconds to fill form)
-        const submissionTime = Date.now();
-        const timeTaken = submissionTime - formLoadTime;
-        if (timeTaken < 5000) {
-          console.warn("Form submitted too quickly");
-          return { valid: false, error: "Please take your time to fill out the form." };
-        }
-
-        // Check rate limiting (3 minutes between submissions)
-        if (isRateLimited()) {
-          return { valid: false, error: "Please wait 3 minutes before submitting again." };
-        }
-
-        // Check daily submission limit (max 5 per day per browser)
-        const submissionCount = getSubmissionCount();
-        if (submissionCount >= 5) {
-          return { valid: false, error: "Daily submission limit reached. Please try again tomorrow." };
-        }
-
-        // Validate email with advanced checks
-        if (!isValidEmail(email)) {
-          return { valid: false, error: "Please enter a valid email address." };
-        }
-
-        // Validate name (no numbers, reasonable length, no special chars)
-        if (name.length < 2 || name.length > 50) {
-          return { valid: false, error: "Please enter a valid name (2-50 characters)." };
-        }
-        if (/\d{2,}/.test(name)) {
-          return { valid: false, error: "Please enter a valid name without numbers." };
-        }
-        if (/[!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?]/.test(name)) {
-          return { valid: false, error: "Please enter a valid name without special characters." };
-        }
-
-        // Validate subject
-        if (subject.length < 3 || subject.length > 100) {
-          return { valid: false, error: "Subject must be between 3-100 characters." };
-        }
-
-        // Check message length (stricter)
-        if (message.length < 20) {
-          return { valid: false, error: "Please provide a more detailed message (minimum 20 characters)." };
-        }
-        if (message.length > 2000) {
-          return { valid: false, error: "Your message is too long (maximum 2000 characters)." };
-        }
-
-        // Check for spam keywords
-        const allText = `${name} ${email} ${subject} ${message}`;
-        if (containsSpamKeywords(allText)) {
-          return { valid: false, error: "Your message contains suspicious content. Please revise." };
-        }
-
-        // Check for excessive links (max 1 link)
-        if (hasExcessiveLinks(message)) {
-          return { valid: false, error: "Please limit links in your message (maximum 1 link allowed)." };
-        }
-
-        // Check for repeated characters
-        if (hasRepeatedChars(message) || hasRepeatedChars(name) || hasRepeatedChars(subject)) {
-          return { valid: false, error: "Your message contains invalid content." };
-        }
-
-        // Check for suspicious patterns
-        if (hasSuspiciousPattern(message)) {
-          return { valid: false, error: "Your message contains suspicious formatting. Please write normally." };
-        }
-
-        return { valid: true };
-      }
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        loading.style.display = "block";
-        errorMessage.style.display = "none";
-        sentMessage.style.display = "none";
-
-        // Validate form for spam
-        const validation = validateForm();
-        if (!validation.valid) {
-          loading.style.display = "none";
-          errorMessage.textContent = validation.error;
-          errorMessage.style.display = "block";
-          return;
-        }
-
-        // Map input values to EmailJS template variables
-        const formData = {
-          from_name: form.querySelector("input[name='from_name']").value,
-          reply_to: form.querySelector("input[name='email']").value,
-          subject: form.querySelector("input[name='subject']").value,
-          message: form.querySelector("textarea[name='message']").value,
-        };
-
-        // Send email
-        emailjs.send("service_6hqsf6n", "template_kvhtw7q", formData)
-          .then(() => {
-            loading.style.display = "none";
-            sentMessage.style.display = "block";
-            form.reset();
-            // Update rate limiting
-            localStorage.setItem('lastFormSubmission', Date.now().toString());
-            // Update submission count
-            updateSubmissionCount();
-            // Reset form load time
-            setTimeout(() => {
-              document.getElementById("form_load_time").value = Date.now();
-            }, 100);
-          })
-          .catch((error) => {
-            loading.style.display = "none";
-            errorMessage.textContent = "Failed to send message. Please try again later.";
-            errorMessage.style.display = "block";
-            console.error("EmailJS Error:", error);
-          });
-      });
-
-      // Load All Blogs functionality
-      const loadAllBtn = document.getElementById("load-all-btn");
-      const loadAllCta = document.getElementById("load-all-cta");
-      const hiddenBlogs = document.querySelectorAll(".hidden-blog");
-
-      if (loadAllBtn) {
-        loadAllBtn.addEventListener("click", function(event) {
-          event.preventDefault();
-          
-          // Show all hidden blog posts
-          hiddenBlogs.forEach(function(blog) {
-            blog.style.display = "block";
-          });
-          
-          // Hide the Load All CTA
-          loadAllCta.style.display = "none";
-        });
-      }
-    });
-  </script>
-
-
+  <script src="assets/js/devyuga.js"></script>
 
 </body>
-
-
 
 </html>
