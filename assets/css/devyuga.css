@@ -853,6 +853,7 @@ button {
   height: 84px;
   border-radius: var(--radius-md);
   object-fit: cover;
+  object-position: center top;
   flex-shrink: 0;
 }
 
