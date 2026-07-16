@@ -28,11 +28,13 @@
   <meta property="og:description"
     content="Custom software, mobile apps, and cloud solutions with expertise in healthcare technology that transform ideas into innovation." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/img/brand/logo.svg" />
+  <meta property="og:image" content="https://devyuga.com/assets/img/brand/og-image.png" />
   <meta property="og:url" content="https://www.devyuga.com" />
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#0F172A">
 
   <!-- Google Fonts: Figtree (headings) / Noto Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +48,111 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://devyuga.com/" />
+
+  <!-- Organization structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Devyuga Software Solutions Inc.",
+    "url": "https://devyuga.com",
+    "logo": "https://devyuga.com/assets/img/brand/logo-512.png",
+    "description": "Product and services software company with expertise in healthcare technology — web, mobile, cloud, and AI solutions.",
+    "email": "info@devyuga.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/devyuga/",
+      "https://www.instagram.com/devyuga_inc/"
+    ]
+  }
+  </script>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I get started with Devyuga's services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Book a free 30-minute discovery call or send us a message to tell us about your idea. We dig into your requirements and goals, then you receive a written proposal with scope options, timeline, and pricing tiers — no obligation. Most clients go from first call to kickoff within two weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to complete a project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects ship in 8–16 weeks, depending on complexity. After a short requirements phase you get a detailed timeline with milestones, and because we build MVP-first you see a working product within the first few sprints."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your project model and how is it priced?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work in an Agile, MVP-first model with short sprints and regular demos. For every system we propose multiple tiers — for example a lean MVP, a standard build, and a fully-featured version — so you choose the scope, timeline, and budget that fit. Pricing is agreed up front per tier, and monthly retainers are available for ongoing work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you add AI — including agentic AI — to my product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We've shipped production systems with LLM integration and custom machine-learning models, and we design agentic AI pipelines — orchestrated LLM agents that handle multi-step workflows with humans in the loop. We start from the business problem and build in evaluation, guardrails, and fallbacks so AI features are reliable in production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you build HIPAA or PIPEDA compliant software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — this is our specialty. We design systems to support compliance with HIPAA, PIPEDA, provincial health acts like the Alberta HIA and Ontario PHIPA, and GDPR: encryption in transit and at rest, role-based access control, audit logging, data residency, and BAA-compatible hosting architectures. We work alongside your privacy officer or counsel and support privacy impact assessments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide maintenance and support after launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer ongoing maintenance and support plans covering monitoring, security patches and dependency updates, bug fixes, backups and recovery, and small enhancements — with response expectations agreed in writing. We also do clean handovers with documented code, runbooks, and training if you prefer to take it in-house."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the code and intellectual property?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You do. For custom development work, the code and IP we build for you belong to you on payment, as set out in the project agreement. Your code lives in repositories you can access from day one, and we're happy to sign NDAs before the first detailed conversation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work with our existing codebase or team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We regularly audit, stabilize, and extend existing systems, and we can embed with your in-house developers as an extension of your team. We start with a code and infrastructure review so you get an honest assessment of what's solid and what's risky."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries do you specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Healthcare is where we've gone deepest — patient management, clinical workflows, rehabilitation tools, telehealth, and research software built around health-privacy requirements. Beyond healthcare, our work spans AI and LLM-powered platforms, MVP development for startups, cloud and DevOps, data engineering, mobile apps, fintech, and consumer products."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -883,7 +990,9 @@
             <span class="section-eyebrow">FAQ</span>
             <h2 style="font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 12px;">Frequently
               asked questions</h2>
-            <p>Get quick answers to common queries and questions about Devyuga.</p>
+            <p>Quick answers about how we work, AI, compliance, and what happens after launch.</p>
+            <p style="margin-top: 12px;">Can't find your answer? <a href="#contact">Send us a message</a> or
+              <a href="#" onclick="openCalendlyModal(event)">book a call</a>.</p>
           </div>
 
           <div class="faq-list">
@@ -897,12 +1006,14 @@
               </summary>
               <div class="faq-body">
                 <ol>
-                  <li>Reach out to our team to discuss your software needs.</li>
-                  <li>We'll work closely with you to understand your requirements and challenges.</li>
-                  <li>Together, we'll develop a tailored solution that meets your unique business goals.</li>
+                  <li><strong>Book a free 30-minute discovery call</strong> (or send us a message below) to tell us
+                    about your idea, product, or problem.</li>
+                  <li>We dig into your requirements, constraints, and goals &mdash; and tell you honestly whether and
+                    how we can help.</li>
+                  <li>You receive a written proposal with scope options, timeline, and pricing tiers &mdash; no
+                    obligation, no pressure.</li>
                 </ol>
-                Our client-centric approach ensures we deliver innovative, high-quality software that drives tangible
-                results for your organization.
+                Most clients go from first call to kickoff within two weeks.
               </div>
             </details>
 
@@ -915,27 +1026,114 @@
                 </svg>
               </summary>
               <div class="faq-body">
-                At Devyuga, we typically complete projects in 8-16 weeks, depending on complexity. After an initial
-                4-week requirement gathering phase, we provide a detailed timeline estimate tailored to your specific
-                project needs. Our goal is to deliver high-quality solutions that meet your business objectives. We
-                work closely with you to ensure the timeline is realistic and achievable.
+                Most projects ship in <strong>8&ndash;16 weeks</strong>, depending on complexity. We start with a
+                short requirements phase (typically up to 4 weeks for larger systems), after which you get a detailed,
+                realistic timeline with milestones. Because we build MVP-first, you see a working product early
+                &mdash; usually within the first few sprints &mdash; rather than waiting until the end.
               </div>
             </details>
 
             <details class="faq-item reveal">
               <summary>
-                What is your project model?
+                What is your project model and how is it priced?
                 <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </summary>
               <div class="faq-body">
-                We follow an Agile methodology to deliver software solutions. Our process starts with building an MVP,
-                keeping you closely involved throughout. We propose multiple tiers for the proposed system, giving you
-                flexibility on timeline and budget. This collaborative, iterative approach allows us to quickly
-                validate concepts, gather feedback, and build the final solution to align with your business
-                objectives.
+                We work in an <strong>Agile, MVP-first</strong> model: short sprints, regular demos, and your feedback
+                folded in continuously. For every system we propose <strong>multiple tiers</strong> &mdash; for
+                example, a lean MVP, a standard build, and a fully-featured version &mdash; so you choose the scope,
+                timeline, and budget that fit. Pricing is agreed up front per tier; there are no surprise invoices.
+                For ongoing work we also offer monthly retainer arrangements.
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                Can you add AI &mdash; including agentic AI &mdash; to my product?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Yes. We've shipped production systems with LLM integration and custom machine-learning models, and we
+                design <strong>agentic AI pipelines</strong> &mdash; orchestrated LLM agents that handle multi-step
+                workflows like triage, document processing, and research, with humans in the loop where it matters.
+                Our approach is practical: we start from the business problem, not the technology, and we build in
+                evaluation, guardrails, and fallbacks so AI features are reliable enough to trust &mdash; not just
+                impressive in a demo.
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                Can you build HIPAA or PIPEDA compliant software?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Yes &mdash; this is our specialty. We design systems to support compliance with
+                <strong>HIPAA</strong> (US), <strong>PIPEDA</strong> and provincial health acts like the
+                <strong>Alberta HIA</strong> and <strong>Ontario PHIPA</strong> (Canada), and
+                <strong>GDPR</strong> (EU): encryption in transit and at rest, role-based access control, audit
+                logging, data residency, and BAA-compatible hosting architectures. Compliance ultimately rests with
+                the organization that controls the data, so we work alongside your privacy officer or counsel and
+                support privacy impact assessments. See our <a href="/compliance/">Security &amp; Compliance</a> page
+                for the full picture.
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                Do you provide maintenance and support after launch?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Yes. Launch is the start, not the end. We offer ongoing <strong>maintenance and support
+                  plans</strong> covering monitoring and alerting, security patches and dependency updates, bug
+                fixes, backups and recovery, and small enhancements &mdash; with response expectations agreed in
+                writing. Prefer to take it in-house? We also do clean handovers: documented code, infrastructure
+                runbooks, and training for your team.
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                Who owns the code and intellectual property?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <strong>You do.</strong> For custom development work, the code and IP we build for you belong to you
+                on payment, as set out in the project agreement. Your code lives in repositories you can access from
+                day one, and everything we ship is documented so any competent team can pick it up. We're also happy
+                to sign NDAs before the first detailed conversation.
+              </div>
+            </details>
+
+            <details class="faq-item reveal">
+              <summary>
+                Can you work with our existing codebase or team?
+                <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div class="faq-body">
+                Absolutely. Not every engagement is greenfield &mdash; we regularly audit, stabilize, and extend
+                existing systems, and we can embed with your in-house developers as an extension of your team. We
+                start with a code and infrastructure review so you get an honest assessment of what's solid, what's
+                risky, and what we'd tackle first.
               </div>
             </details>
 
@@ -948,16 +1146,19 @@
                 </svg>
               </summary>
               <div class="faq-body">
-                We have expertise across a wide range of industries and solutions, with a special focus on healthcare:
+                Healthcare is where we've gone deepest &mdash; patient management, clinical workflows, rehabilitation
+                tools, telehealth, and research software built around health-privacy requirements. Beyond healthcare,
+                our work spans:
                 <ul>
-                  <li>Healthcare Technology (Patient Management, Clinical Workflows, HIPAA-Compliant Systems)</li>
-                  <li>MVP Development</li>
-                  <li>Cloud DevOps</li>
-                  <li>Data Science and Engineering</li>
-                  <li>Mobile Apps</li>
+                  <li>AI &amp; LLM-powered platforms</li>
+                  <li>MVP development for startups</li>
+                  <li>Cloud &amp; DevOps</li>
+                  <li>Data engineering and analytics</li>
+                  <li>Mobile apps (iOS &amp; Android)</li>
+                  <li>Fintech and consumer products</li>
                 </ul>
-                Our team works with both large corporations and small startups, delivering scalable solutions tailored
-                to your unique business needs across all industries.
+                We work with everyone from solo founders to established organizations &mdash; see
+                <a href="/portfolio/">our work</a> for examples.
               </div>
             </details>
           </div>
@@ -1097,7 +1298,7 @@
         </div>
 
         <nav class="footer-links" aria-label="Useful links">
-          <h4>Company</h4>
+          <p class="footer-heading">Company</p>
           <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="/about/">About us</a></li>
@@ -1109,7 +1310,7 @@
         </nav>
 
         <nav class="footer-links" aria-label="Our services">
-          <h4>Our Services</h4>
+          <p class="footer-heading">Our Services</p>
           <ul>
             <li><a href="#services">Cloud Solutions</a></li>
             <li><a href="#services">Mobile App Development</a></li>
@@ -1119,7 +1320,7 @@
         </nav>
 
         <div class="footer-contact">
-          <h4>Contact Us</h4>
+          <p class="footer-heading">Contact Us</p>
           <p><strong>Email:</strong> <a href="mailto:info@devyuga.com">info@devyuga.com</a></p>
           <p>Calgary, AB, Canada</p>
         </div>

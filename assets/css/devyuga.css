@@ -99,6 +99,14 @@ h1, h2, h3, h4 {
   border-radius: 4px;
 }
 
+/* In-content links must be distinguishable without relying on color (WCAG 1.4.1) */
+main p a:not(.btn),
+main li a:not(.btn),
+.faq-body a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 button {
   font: inherit;
   cursor: pointer;
@@ -1242,11 +1250,25 @@ textarea.form-control {
   max-width: 34ch;
 }
 
-.site-footer h4 {
+.site-footer h4,
+.site-footer .footer-heading {
   color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 15.5px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
-  margin-bottom: var(--space-3);
+  margin: 0 0 var(--space-3);
+}
+
+.site-footer p a {
+  color: #CBD5E1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer p a:hover {
+  color: #38BDF8;
 }
 
 .site-footer ul {
